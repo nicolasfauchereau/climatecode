@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>xray | (Open) Climate Code</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://example.com/posts/xray/">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Nicolas Fauchereau">
+<meta property="og:site_name" content="(Open) Climate Code">
+<meta property="og:title" content="xray">
+<meta property="og:url" content="https://example.com/posts/xray/">
+<meta property="og:description" content="xray: A core Python package for climate science¶
+
+
+
+
+
+
+
+
+xray has been developed by scientists / engineers working at the Climate Corporation
+It is an open source project and Python package that aims ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-07-31T12:22:27+12:00">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../stories/about-me" title="About me"><i class="icon-user"></i></a></li>
+            <li><a href="https://twitter.com/nfauchereau" title="My Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/nicolasfauchereau" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://nz.linkedin.com/pub/nicolas-fauchereau/" title="My Linkedin"><i class="icon-linkedin"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">xray</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-07-31T12:22:27+12:00">2015-07-31 12:22</time>
+            
+                      |  
+        <a href="index.ipynb" id="sourcelink">Source</a>
+
+            </div>
+            
+        </div>
+        <div class="body">
+            <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="xray:-A-core-Python-package-for-climate-science">xray: A core Python package for climate science<a class="anchor-link" href=".#xray:-A-core-Python-package-for-climate-science">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://github.com/xray/xray">xray</a> has been developed by scientists / engineers working at the <a href="http://climate.com/">Climate Corporation</a></p>
+<p>It is an open source project and Python package that aims to bring
+the labeled data power of <a href="http://pandas.pydata.org">pandas</a> to the
+physical sciences, by providing N-dimensional variants of the core
+<a href="http://pandas.pydata.org">pandas</a> data structures, <code>Series</code> and
+<code>DataFrame</code>: the xray <code>DataArray</code> and <code>Dataset</code>.</p>
+<p><br><!-- TEASER_END --></p>
+<p>The goal is to provide a pandas-like and pandas-compatible toolkit for
+analytics on multi-dimensional arrays, rather than the tabular data for
+which pandas excels. The approach adopts the <a href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM">Common Data
+Model</a>
+for self-describing scientific data in widespread use in the Earth
+sciences (e.g., <a href="http://www.unidata.ucar.edu/software/netcdf">netCDF</a>
+and <a href="http://www.opendap.org/">OPeNDAP</a>): <code>xray.Dataset</code> is an in-memory
+representation of a netCDF file.</p>
+<ul>
+<li>
+<p>HTML documentation: <a href="http://xray.readthedocs.org">http://xray.readthedocs.org</a>: <strong>really good doc !</strong></p>
+</li>
+<li>
+<p>Source code: <a href="http://github.com/xray/xray">http://github.com/xray/xray</a></p>
+</li>
+</ul>
+<p>The main advantages of using <a href="https://github.com/xray/xray">xray</a> versus <a href="https://github.com/Unidata/netcdf4-python">netCDF4</a> are:</p>
+<ul>
+<li>intelligent selection along <strong>labelled dimensions</strong> (and also indexes)</li>
+<li>
+<strong>groupby</strong> operations ! </li>
+<li>data alignment </li>
+<li>IO (netcdf)</li>
+<li>conversion from / to <a href="http://pandas.pydata.org/pandas-docs/dev/generated/pandas.DataFrame.html">Pandas.DataFrames</a>
+</li>
+</ul>
+<p>To install the latest version of xray (via conda):</p>
+
+<pre><code>ᐅ conda install xray
+
+</code></pre>
+<p>or if you want the bleeding edge:</p>
+
+<pre><code>ᐅ pip install git+https://github.com/xray/xray</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">xray</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+        </div>
+                <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../about-this-blog/" rel="prev" title="About this blog">Previous post</a>
+            </li>
+        </ul>
+</div>
+                    <footer id="footer"><p></p>
+<hr>Contents © 2015 <a href="mailto:nicolas.fauchereau@gmail.com">Nicolas Fauchereau</a> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:0px;" src="https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a>
+<br>Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, zen-ipython theme from <a href="http://www.damian.oquanta.info">Damian Avila</a>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>    Share</a>
+<ul>
+<li>
+<a class="addthis_button_twitter"><i class="icon-twitter icon-2x"></i>    Twitter</a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"><i class="icon-google-plus-sign icon-2x"></i>    Google+</a>
+</li>
+<li>
+<a class="addthis_button_linkedin"><i class="icon-linkedin icon-2x"></i>    Linkedin</a>
+</li>
+<li>
+<a class="addthis_button_facebook"><i class="icon-facebook-sign icon-2x"></i>    Facebook</a>
+</li>
+</ul>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

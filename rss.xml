@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>(Open) Climate Code</title><link>https://example.com/</link><description>(Python) code and musings about open source for climate science</description><atom:link href="https://example.com/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 31 Jul 2015 00:41:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>xray</title><link>https://example.com/posts/xray/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="xray:-A-core-Python-package-for-climate-science"&gt;xray: A core Python package for climate science&lt;a class="anchor-link" href="https://example.com/posts/xray/#xray:-A-core-Python-package-for-climate-science"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://github.com/xray/xray"&gt;xray&lt;/a&gt; has been developed by scientists / engineers working at the &lt;a href="http://climate.com/"&gt;Climate Corporation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is an open source project and Python package that aims to bring
+the labeled data power of &lt;a href="http://pandas.pydata.org"&gt;pandas&lt;/a&gt; to the
+physical sciences, by providing N-dimensional variants of the core
+&lt;a href="http://pandas.pydata.org"&gt;pandas&lt;/a&gt; data structures, &lt;code&gt;Series&lt;/code&gt; and
+&lt;code&gt;DataFrame&lt;/code&gt;: the xray &lt;code&gt;DataArray&lt;/code&gt; and &lt;code&gt;Dataset&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://example.com/posts/xray/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://example.com/posts/xray/</guid><pubDate>Fri, 31 Jul 2015 00:22:27 GMT</pubDate></item><item><title>About this blog</title><link>https://example.com/posts/about-this-blog/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This is a blog about code - mainly Python code -, climate science, open source and open science&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://example.com/posts/about-this-blog/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://example.com/posts/about-this-blog/</guid><pubDate>Thu, 30 Jul 2015 22:41:27 GMT</pubDate></item></channel></rss>
