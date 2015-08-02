@@ -320,7 +320,6 @@ pre.code, code {
 	 */
 
 	a[href^="#"]:after,
-	a[href^="data:"]:after,
 	a[href^="javascript:"]:after {
 		content: "";
 	}
