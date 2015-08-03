@@ -16,19 +16,27 @@ I am a climate scientist at [NIWA](http://www.niwa.co.nz) and I am based in Auck
 
 I work on a variety of things, from the reconstruction of the climates of the past
 to seasonal forecasting. I have a strong interest in methods (statistics, machine learning particularly),
-in scientific computing and open science. 
+in scientific computing and open science.
 
 ## Where do I come from ?
 
-I hail from Burgundy, France, and I obtained my Ph.D in Dijon. After about a year
-at the LSCE, near Paris, I decided to expand a bit my horizons. I was granted a post-doctoral
-fellowship from the University of Cape-Town, and I spent about 3 years working at the
-oceanography department (where I am still a research associate). In 2009 I joined
-the CSIR as a senior researcher in the Southern Observatory (SOCCO) where I had the
-great privilege of working with a bunch of awesome people.
+I hail from Burgundy, France, and I obtained my Ph.D (in 2004) in [Dijon](http://climatologie.u-bourgogne.fr/). After about a year
+at the [LSCE](http://www.lsce.ipsl.fr/en/), near Paris, I decided to expand a bit my horizons. I was granted a post-doctoral
+fellowship from the [University of Cape-Town](http://www.uct.ac.za/), and I spent about 3 years working at the
+[oceanography department](http://www.sea.uct.ac.za/) (where I am still a research associate), notably with
+[Prof. Mathieu Rouault](http://ma-re.uct.ac.za/staff/academic-staff/dr-mathieu-rouault/), another french import in South Africa and one of the most
+versatile scientists I have known. In 2009 I joined
+the [CSIR](http://www.csir.co.za/) as a senior researcher in the Southern Ocean Carbon and Climate Observatory ([SOCCO](http://socco.org.za/about/)) where I had the
+great privilege of working with a [bunch of awesome people](http://socco.org.za/about/#team).  
 
-In 2012 we decided to relocate our little family to New Zealand, after I obtained
-a position at the National Institute for Water and Atmospheric research (NIWA Ltd.).  
+In 2012 we decided to relocate our little family to New Zealand, and I obtained
+a position at the [National Institute for Water and Atmospheric research (NIWA Ltd.)](http://www.niwa.co.nz).
+
+Since joining NIWA, I have been working on a variety of projects, and been involved in both
+basic research (*e.g.* paleoclimate reconstructions) and very applied science (*e.g.* forecasting climate at sub-seasonal
+to seasonal time-scales). A common theme though: all this involves processing and analyzing data - oftentimes a lot of data - and using statistical methods to
+try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but since a few years I transitioned completely to Python: the Python Scientific Ecosystem has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
+that you cannot do in Python, and on top of being open-source, [Python is just fun to code](https://xkcd.com/353/).
 
 ## Tools
 
@@ -43,9 +51,7 @@ in particular, this is what I use (almost) daily:
 + scikit-learn
 + xray
 
-and of course the [IPython (now Jupyter)] notebook
-
-
+and of course the [IPython (now Jupyter)] notebook.
 
 ## Contact me
 
