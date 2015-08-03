@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-A [incomplete] list of resources on Python and Python for data analysis and visualization, loosely organized by category:
+A  - totally incomplete - list of resources I have come across on Python and Python for data analysis and visualization, loosely organized by category:
 
 <br>
 <!-- TEASER_END -->
@@ -46,7 +46,7 @@ A [incomplete] list of resources on Python and Python for data analysis and visu
 ### Symbolic maths
 
 + The [SymPy](www.sympy.org) library is a Python library for symbolic mathematics. It supports polynomials, calculus, solving equations, etc
-+ The [sage](http://www.sagemath.org/) software: `Mission: Creating a viable free open source alternative to Magma, Maple, Mathematica and Matlab`
++ The [sage](http://www.sagemath.org/) software: *Mission: Creating a viable free open source alternative to Magma, Maple, Mathematica and Matlab*
 
 ### Geospatial statistics
 
@@ -74,7 +74,7 @@ A [incomplete] list of resources on Python and Python for data analysis and visu
 
 ### Python on the GPU
 
-+[PyCUDA](http://mathema.tician.de/software/pycuda/): PyCUDA lets you access Nvidia‘s CUDA parallel computation API from Python
++ [PyCUDA](http://mathema.tician.de/software/pycuda/): PyCUDA lets you access Nvidia‘s CUDA parallel computation API from Python
 
 ### Parallel computing with Python / IPython
 
