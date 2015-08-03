@@ -11,6 +11,8 @@
 
 A [incomplete] list of resources on Python and Python for data analysis and visualization, loosely organized by category:
 
+<br>
+<!-- TEASER_END -->
 
 ### Object Oriented Programming in Python
 
