@@ -16,7 +16,6 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 ### Object Oriented Programming in Python
 
-+ [www.google.com](http://www.google.com)
 + [A good tutorial by Alan Gauld](http://www.freenetpages.co.uk/hp/alan.gauld/tutclass.htm)
 + The [classes](http://docs.python.org/2/tutorial/classes.html) entry from the official Python doc
  A short [pdf](http://www1.gly.bris.ac.uk/~walker/PythonEarthSci/PfES_3.pdf) from Andrew Walker's [Python for Earth Scientists](http://www1.gly.bris.ac.uk/~walker/PythonEarthSci/) course
