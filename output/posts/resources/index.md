@@ -2,12 +2,15 @@
 .. title: resources
 .. slug: resources
 .. date: 2015-08-03 14:02:05 UTC+12:00
-.. tags: resources,libraries,books,ipython notebooksi,tutorials
+.. tags: resources,libraries,books,ipython notebooks,tutorials
 .. category: resources
 .. link:
 .. description:
 .. type: text
 -->
+
+A [incomplete] list of resources on Python and Python for data analysis and visualization, loosely organized by category:
+
 
 ### Object Oriented Programming in Python
 
