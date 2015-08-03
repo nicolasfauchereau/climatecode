@@ -9,8 +9,6 @@
 .. type: text
 -->
 
-# About me
-
 ## Who am I ?
 
 Hi ! my name is [Nicolas Fauchereau](mailto:nicolas.fauchereau@gmail.com)
@@ -21,7 +19,9 @@ to seasonal forecasting.
 
 ## Tools
 
-+ Python
+I use [Python](http://www.python.org) and the Python Scientific ecosystem, paricularly:
+
+
 
 ## Contact me
 
