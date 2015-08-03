@@ -14,7 +14,8 @@ I am a climate scientist (to know more about me, head [here](http://nicolasfauch
 and visualisation for about 10 years, slowly transitioning from Matlab and R.
 
 In this blog, I will try and share what's I have learned along the way, and give
-full examples of how I use Python in my research or operational workflows.
+full examples of how I use Python in my research or operational workflows.  
+
 
 I will occasionally reflect on [open science](http://openscience.com), and how open-source in general,
-and Python in particular can be used to help make climate science more open.
+and Python in particular can be used to help make climate science more open.  
