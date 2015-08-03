@@ -21,7 +21,7 @@ in scientific computing and open science.
 ## Where do I come from ?
 
 I hail from Burgundy, France, and I obtained my Ph.D (in 2004) in [Dijon](http://climatologie.u-bourgogne.fr/). After about a year
-at the [LSCE](http://www.lsce.ipsl.fr/en/), near Paris, I decided to expand a bit my horizons. I was granted a post-doctoral
+at the [LSCE](http://www.lsce.ipsl.fr/en/), near Paris, I decided to expand a bit my horizons. In 2006 I was awarded a post-doctoral
 fellowship from the [University of Cape-Town](http://www.uct.ac.za/), and I spent about 3 years working at the
 [oceanography department](http://www.sea.uct.ac.za/) (where I am still a research associate), notably with
 [Prof. Mathieu Rouault](http://ma-re.uct.ac.za/staff/academic-staff/dr-mathieu-rouault/), another french import in South Africa and one of the most
@@ -40,7 +40,7 @@ to seasonal time-scales). A common theme though: all this involves processing an
 try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but over the past few years I have transitioned completely to **Python**: the [Python Scientific Ecosystem](http://www.scipy.org/about.html) has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
 that you cannot do in Python, and on top of being open-source, [Python is just fun to code](https://xkcd.com/353/).
 
-## Tools
+## The tools of the trade
 
 I use [Python](http://www.python.org) and of course the Python Scientific ecosystem,
 in particular, this is what I use (almost) daily:
