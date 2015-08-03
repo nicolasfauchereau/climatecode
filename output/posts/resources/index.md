@@ -60,7 +60,7 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 ### Biology, ecology
 
 + [Biopython](http://biopython.org/wiki/Main_Page): Biopython is a set of freely available tools for biological computation written in Python by an international team of developers.
-+[GeoEco](https://pypi.python.org/pypi/GeoEco): Open source geoprocessing toolbox designed for coastal and marine researchers and GIS analysts who work with spatially-explicit ecological and oceanographic data. For Windows (> XP) only.
++ [GeoEco](https://pypi.python.org/pypi/GeoEco): Open source geoprocessing toolbox designed for coastal and marine researchers and GIS analysts who work with spatially-explicit ecological and oceanographic data. For Windows (> XP) only.
 + [Galaxy](http://galaxyproject.org/): Galaxy is a scientific workflow, data integration and data and analysis persistence and publishing platform that aims to make computational biology accessible to research scientists that do not have computer programming experience.
 
 ### Computational Fluid Dynamics and PDE solvers
@@ -129,7 +129,7 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 + [http://earthpy.org/](http://earthpy.org/): EarthPy is a collection of IPython notebooks with examples of Earth Science related Python code
 
-+ [data science notebooks): IPython notebooks for data science, continually updated Data Science Python Notebooks: Spark, Hadoop MapReduce, HDFS, AWS, Kaggle, scikit-learn, matplotlib, pandas, NumPy, SciPy.
++ [data science notebooks](https://github.com/donnemartin/data-science-ipython-notebooks): Updated Data Science Python Notebooks: Spark, Hadoop MapReduce, HDFS, AWS, Kaggle, scikit-learn, matplotlib, pandas, NumPy, SciPy ...
 
 ### Some books
 
