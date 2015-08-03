@@ -149,7 +149,7 @@ NAVIGATION_LINKS = {
         ('/stories/about-me', 'About me', 'icon-user'),
         ('https://twitter.com/nfauchereau', 'My Twitter', 'icon-twitter'),
         ('https://github.com/nicolasfauchereau', 'My Github', 'icon-github'),
-        ('https://nz.linkedin.com/pub/nicolas-fauchereau/', 'My Linkedin', 'icon-linkedin'),
+        ('https://nz.linkedin.com/pub/nicolas-fauchereau/7/6b2/469', 'My Linkedin', 'icon-linkedin'),
     )
 }
 
