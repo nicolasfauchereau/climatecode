@@ -9,11 +9,35 @@
   <lastmod>2015-08-03</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://example.com/categories/books.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/cat_resources.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/ipython-notebooksi.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/libraries.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://example.com/categories/open-science.xml</loc>
   <lastmod>2015-08-03</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/open-source.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/resources.xml</loc>
+  <lastmod>2015-08-03</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/tutorials.xml</loc>
   <lastmod>2015-08-03</lastmod>
  </sitemap>
  <sitemap>

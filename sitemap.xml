@@ -33,11 +33,35 @@
   <lastmod>2015-08-03</lastmod>
  </url>
  <url>
+  <loc>https://example.com/categories/books/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/cat_resources/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/ipython-notebooksi/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/libraries/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
   <loc>https://example.com/categories/open-science/</loc>
   <lastmod>2015-08-03</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/open-source/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/resources/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/tutorials/</loc>
   <lastmod>2015-08-03</lastmod>
  </url>
  <url>
@@ -50,6 +74,10 @@
  </url>
  <url>
   <loc>https://example.com/posts/about-this-blog/</loc>
+  <lastmod>2015-08-03</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/posts/resources/</loc>
   <lastmod>2015-08-03</lastmod>
  </url>
  <url>
