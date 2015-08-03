@@ -14,7 +14,10 @@
 ## Who am I ?
 
 Hi ! my name is [Nicolas Fauchereau](mailto:nicolas.fauchereau@gmail.com)
-I am a climate scientist at [NIWA](http://www.niwa.co.nz)
+I am a climate scientist at [NIWA](http://www.niwa.co.nz) and I am based in Auckland, New Zealand.
+
+I work on a variety of things, from the reconstruction of the climates of the past
+to seasonal forecasting.
 
 ## Tools
 
