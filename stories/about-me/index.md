@@ -30,16 +30,18 @@ the [CSIR](http://www.csir.co.za/) as a senior researcher in the Southern Ocean 
 great privilege of working with a [bunch of awesome people](http://socco.org.za/about/#team).  
 
 <br>
+<br>
 
 In 2012 we decided to relocate our little family to New Zealand, and I obtained
 a position at the [National Institute for Water and Atmospheric research (NIWA Ltd.)](http://www.niwa.co.nz).  
 
 <br>
+<br>
 
 Since joining NIWA, I have been working on a variety of projects, and been involved in both
 basic research (*e.g.* paleoclimate reconstructions) and very applied science (*e.g.* forecasting climate at sub-seasonal
 to seasonal time-scales). A common theme though: all this involves processing and analyzing data - oftentimes a lot of data - and using statistical methods to
-try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but since a few years I transitioned completely to Python: the Python Scientific Ecosystem has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
+try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but since a few years I transitioned completely to Python: the [Python Scientific Ecosystem](http://www.scipy.org/about.html) has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
 that you cannot do in Python, and on top of being open-source, [Python is just fun to code](https://xkcd.com/353/).
 
 ## Tools
