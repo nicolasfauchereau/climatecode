@@ -29,8 +29,12 @@ versatile scientists I have known. In 2009 I joined
 the [CSIR](http://www.csir.co.za/) as a senior researcher in the Southern Ocean Carbon and Climate Observatory ([SOCCO](http://socco.org.za/about/)) where I had the
 great privilege of working with a [bunch of awesome people](http://socco.org.za/about/#team).  
 
+<br>
+
 In 2012 we decided to relocate our little family to New Zealand, and I obtained
-a position at the [National Institute for Water and Atmospheric research (NIWA Ltd.)](http://www.niwa.co.nz).
+a position at the [National Institute for Water and Atmospheric research (NIWA Ltd.)](http://www.niwa.co.nz).  
+
+<br>
 
 Since joining NIWA, I have been working on a variety of projects, and been involved in both
 basic research (*e.g.* paleoclimate reconstructions) and very applied science (*e.g.* forecasting climate at sub-seasonal
@@ -41,7 +45,7 @@ that you cannot do in Python, and on top of being open-source, [Python is just f
 ## Tools
 
 I use [Python](http://www.python.org) and of course the Python Scientific ecosystem,
-in particular, this is what I use (almost) daily:
+in particular, this is what I use (almost) daily:  
 
 + numpy
 + scipy
