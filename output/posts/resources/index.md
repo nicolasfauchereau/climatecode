@@ -154,6 +154,8 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 ### Some interesting libraries, built on top of the main Scientific stack
 
++ [xray](https://github.com/xray/xray): N-D labeled arrays and datasets in Python.
+
 + [PYMC](http://pymc-devs.github.io/pymc/): By Chris Fonnesbeck, Bayesian statistical models and fitting algorithms, including Markov chain Monte Carlo.
 
 + [Seaborn](http://www.stanford.edu/~mwaskom/software/seaborn/): Statistical data visualization, by Michael Waskom. Its [graphical representation of linear models](http://www.stanford.edu/~mwaskom/software/seaborn/linear_models.html) is particularly interesting.

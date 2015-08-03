@@ -37,7 +37,7 @@ a position at the [National Institute for Water and Atmospheric research (NIWA L
 Since joining NIWA, I have been working on a variety of projects, and been involved in both
 basic research (*e.g.* paleoclimate reconstructions) and very applied science (*e.g.* forecasting climate at sub-seasonal
 to seasonal time-scales). A common theme though: all this involves processing and analyzing data - oftentimes a lot of data - and using statistical methods to
-try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but since a few years I transitioned completely to Python: the [Python Scientific Ecosystem](http://www.scipy.org/about.html) has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
+try and make sense of this data, extract patterns, and make predictions. Along the years I used various tools, from Matlab to R, but over the past few years I have transitioned completely to **Python**: the [Python Scientific Ecosystem](http://www.scipy.org/about.html) has grown exponentially both in quality and quantity, and now there's almost nothing that you can do in R or Matlab
 that you cannot do in Python, and on top of being open-source, [Python is just fun to code](https://xkcd.com/353/).
 
 ## Tools
@@ -47,15 +47,15 @@ in particular, this is what I use (almost) daily:
 
 <br>
 
-+ numpy
-+ scipy
-+ matplotlib
-+ pandas
-+ basemap
-+ scikit-learn
-+ xray
++ [numpy](http://www.numpy.org/)
++ [scipy](http://www.scipy.org/)
++ [matplotlib](http://matplotlib.org/)
++ [pandas](http://pandas.pydata.org/)
++ [basemap](https://basemaptutorial.readthedocs.org/en/latest/)
++ [scikit-learn](http://scikit-learn.org/)
++ [xray](https://github.com/xray/xray)
 
-and of course the [IPython (now Jupyter)] notebook.
+and of course the [IPython (now Jupyter)](https://jupyter.org/) notebook.
 
 ## Contact me
 
