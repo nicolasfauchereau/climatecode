@@ -21,7 +21,7 @@ BLOG_AUTHOR = "Nicolas Fauchereau"  # (translatable)
 BLOG_TITLE = "(Open) Climate Code"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://example.com/"
+SITE_URL = "http://nicolasfauchereau.github.io/climatecode/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
@@ -125,21 +125,10 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 #     DEFAULT_LANG: (
 #         ("/archive.html", "Archive"),
 #         ("/categories/", "Tags"),
-#         ("/rss.xml", "RSS feed"),
+#         ("/stories/about-me", "About me"),
 #     ),
 # }
 
-# NAVIGATION_LINKS = {
-#     DEFAULT_LANG: (
-#         ('/index.html', 'Home', 'icon-home'),
-#         ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-#         ('/categories/index.html', 'Tags', 'icon-tags'),
-#         ('/rss.xml', 'RSS', 'icon-rss'),
-#         ('https://getnikola.com', 'About me', 'icon-user'),
-#         ('https://twitter.com/nfauchereau', 'My Twitter', 'icon-twitter'),
-#         ('https://github.com/nicolasfauchereau', 'My Github', 'icon-github'),
-#     )
-# }
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
@@ -147,15 +136,15 @@ NAVIGATION_LINKS = {
         ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/index.html', 'Tags', 'icon-tags'),
         ('/stories/about-me', 'About me', 'icon-user'),
-        ('https://twitter.com/nfauchereau', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/nicolasfauchereau', 'My Github', 'icon-github'),
-        ('https://nz.linkedin.com/pub/nicolas-fauchereau/7/6b2/469', 'My Linkedin', 'icon-linkedin'),
+        ('https://twitter.com/nfauchereau', 'Twitter', 'icon-twitter'),
+        ('https://github.com/nicolasfauchereau', 'Github', 'icon-github'),
+        ('https://nz.linkedin.com/pub/nicolas-fauchereau/7/6b2/469', 'Linkedin', 'icon-linkedin'),
     )
 }
 
 # Name of the theme to use.
-#THEME = "bootstrap3"
-THEME = "zen-ipython"
+#THEME = "octopress"
+THEME = "zen"
 
 # Below this point, everything is optional
 
@@ -230,12 +219,14 @@ POSTS = (
     ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.html", "posts", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
 )
 PAGES = (
     ("stories/*.md", "stories", "story.tmpl"),
     ("stories/*.ipynb", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.html", "stories", "story.tmpl"),
     ("stories/*.rst", "stories", "story.tmpl"),
 )
 
@@ -864,7 +855,7 @@ SOCIAL_BUTTONS_CODE = """
 
 # Show link to source for the posts?
 # Formerly known as HIDE_SOURCELINK (inverse)
-SHOW_SOURCELINK = True
+SHOW_SOURCELINK = False
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
 # COPY_SOURCES = True
@@ -1009,7 +1000,7 @@ UNSLUGIFY_TITLES = True
 # If webassets is installed, bundle JS and CSS into single files to make
 # site loading faster in a HTTP/1.1 environment but is not recommended for
 # HTTP/2.0 when caching is used. Defaults to True.
-# USE_BUNDLES = True
+USE_BUNDLES = False
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]

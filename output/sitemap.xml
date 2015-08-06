@@ -1,95 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://example.com/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2015/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/2015/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2015/07/</loc>
-  <lastmod>2015-07-31</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/2015/07/</loc>
+  <lastmod>2015-07-30T22:53:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2015/08/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/2015/08/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/archive.html</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/archive.html</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/about/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/about/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/books/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/books/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/cat_resources/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/cat_resources/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/ipython-notebooks/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooks/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/ipython-notebooksi/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooksi/</loc>
+  <lastmod>2015-08-03T02:03:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/libraries/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/libraries/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/open-science/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/netcdf/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/open-source/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/olr/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/resources/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-science/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/tutorials/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-source/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/galleries/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/resources/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/listings/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/tag1/</loc>
+  <lastmod>2015-08-04T21:03:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/about-this-blog/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/tag2/</loc>
+  <lastmod>2015-08-04T21:03:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/resources/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/tutorials/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/xray/</loc>
-  <lastmod>2015-07-31</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/xray/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/stories/about-me/</loc>
-  <lastmod>2015-08-03</lastmod>
+  <loc>http://nicolasfauchereau.github.io/climatecode/galleries/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/listings/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/about-this-blog/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/example/</loc>
+  <lastmod>2015-08-05T01:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/example/index.src.html</loc>
+  <lastmod>2015-08-05T01:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/resources/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/xray/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/xray/index.src.html</loc>
+  <lastmod>2015-08-06T03:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/stories/about-me/</loc>
+  <lastmod>2015-08-06T08:20:00Z</lastmod>
  </url>
 </urlset>

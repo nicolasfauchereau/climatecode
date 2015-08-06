@@ -1,2 +1,2 @@
-Sitemap: https://example.com/sitemapindex.xml
+Sitemap: http://nicolasfauchereau.github.io/climatecode/sitemapindex.xml
 
