@@ -1,22 +1,7 @@
-body {
-  position: static;
-}
-
-pre {
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  border: none;
-}
-
-.page-content > .content h1, .page-content > .content .h1 {
-  text-align: center;
-}
-
 div.prompt {
   padding: 0.6em;
   font-size: 13px;
-  background: url('../images/blue-mocha-grunge-reversed.jpg');
+  background-color: #E9E9E9;
   margin-right: 1em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
