@@ -15,7 +15,19 @@ article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://nicolasfauchereau.github.io/climatecode/stories/about-me/">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Nicolas Fauchereau">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Nicolas Fauchereau">
 <meta property="og:site_name" content="(Open) Climate Code">
 <meta property="og:title" content="About me">
 <meta property="og:url" content="http://nicolasfauchereau.github.io/climatecode/stories/about-me/">
@@ -90,6 +102,14 @@ in particular, this is what I use (almost) daily:</p>
 <li><a href="https://github.com/xray/xray">xray</a></li>
 </ul>
 <p>and of course the <a href="https://jupyter.org/">IPython (now Jupyter)</a> notebook.</p>
+<p>Besides Python, I occasionally use:</p>
+<ul>
+<li>
+<a href="https://code.zmaw.de/projects/cdo">CDO [The Climate Data Operators]</a>, for operations on netcdf files and
+file format conversions (i.e. <code>grib</code> to <code>netcdf</code>)</li>
+<li>
+<a href="http://nco.sourceforge.net">NCO [the NetCDF Operators]</a>, also handy for netcdf extractions / concatenations</li>
+</ul>
 <h3>Contact me</h3>
 <ul>
 <li><a href="mailto:nicolas.fauchereau@gmail.com">gmail</a></li>
