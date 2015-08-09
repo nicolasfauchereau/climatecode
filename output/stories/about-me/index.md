@@ -57,6 +57,12 @@ in particular, this is what I use (almost) daily:
 
 and of course the [IPython (now Jupyter)](https://jupyter.org/) notebook.
 
+Besides Python, I occasionally use:
+
++ [CDO [The Climate Data Operators]](https://code.zmaw.de/projects/cdo), for operations on netcdf files and
+file format conversions (i.e. `grib` to `netcdf`)
++ [NCO [the NetCDF Operators]](http://nco.sourceforge.net), also handy for netcdf extractions / concatenations
+
 ## Contact me
 
 + [gmail](mailto:nicolas.fauchereau@gmail.com)
