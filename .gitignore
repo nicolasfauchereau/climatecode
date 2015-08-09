@@ -1,2 +1,4 @@
 *.nc
 *.pyc
+.ipynb_checkpoints
+*.db
