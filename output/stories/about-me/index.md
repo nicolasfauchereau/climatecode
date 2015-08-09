@@ -55,9 +55,9 @@ in particular, this is what I use (almost) daily:
 + [scikit-learn](http://scikit-learn.org/)
 + [xray](https://github.com/xray/xray)
 
-and of course the [IPython (now Jupyter)](https://jupyter.org/) notebook.
+and of course the [IPython (now Jupyter)](https://jupyter.org/) notebook.  
 
-Besides Python, I occasionally use:
+Besides Python, I occasionally use:  
 
 + [CDO [The Climate Data Operators]](https://code.zmaw.de/projects/cdo), for operations on netcdf files and
 file format conversions (i.e. `grib` to `netcdf`)
