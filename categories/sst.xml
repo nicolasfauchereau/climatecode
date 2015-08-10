@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>(Open) Climate Code (SST)</title><link>http://nicolasfauchereau.github.io/climatecode/</link><description></description><atom:link href="http://nicolasfauchereau.github.io/climatecode/categories/sst.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 10 Aug 2015 00:56:53 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>EOF analysis with scikit-learn</title><link>http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this notebook I give a very simple (and rather uncommented) example of how to use &lt;a href="http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/"&gt;scikit-learn&lt;/a&gt; to perform an Empirical Orthogonal Function decomposition (&lt;em&gt;EOF analysis&lt;/em&gt;, often referred to as well as &lt;em&gt;Principal Component Analysis&lt;/em&gt; or &lt;em&gt;PCA&lt;/em&gt;) of a climate field, in this case the monthly Sea Surface Temperature (SST) anomalies in the Pacific. 
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>EOF</category><category>SST</category><guid>http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/</guid><pubDate>Sun, 09 Aug 2015 23:21:34 GMT</pubDate></item></channel></rss>
