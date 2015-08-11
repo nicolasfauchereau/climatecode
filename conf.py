@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Nicolas Fauchereau"  # (translatable)
-BLOG_TITLE = "(Open) Climate Code"  # (translatable)
+BLOG_TITLE = "cracking the climate code"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "http://nicolasfauchereau.github.io/climatecode/"
