@@ -131,6 +131,8 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 + [data science notebooks](https://github.com/donnemartin/data-science-ipython-notebooks): Updated Data Science Python Notebooks: Spark, Hadoop MapReduce, HDFS, AWS, Kaggle, scikit-learn, matplotlib, pandas, NumPy, SciPy ...
 
++ [Effective computation in physics](https://github.com/physics-codes): the code examples accompanying [the book](http://shop.oreilly.com/product/0636920033424.do)
+
 ### Some books
 
 + [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do): From Wes McKinney (Developer of [Pandas](www.pandas.pydata.org))
@@ -150,6 +152,8 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 + [A Hands-On Introduction to Using Python in the Atmospheric and Oceanic Sciences](http://www.johnny-lin.com/pyintro/): By [Johnny Lin](http://www.johnny-lin.com), Professor of physics and head of the Climate Research Group at North Park University.
 
 + [principles of planetary climate](http://geosci.uchicago.edu/~rtp1/PrinciplesPlanetaryClimate/index.html): by Ray Pierrehumbert. Excellent book on the physics of planetary climates, with freely downloadable python code to follow the examples given in the book.
+
++ [Effective computation in physics](http://shop.oreilly.com/product/0636920033424.do): by [Katy Huff](http://katyhuff.github.io) and [Anthony Scopatz](http://anthony.scopatz.com), Field Guide to Research with Python. Excellent. Code examples at [https://github.com/physics-codes](https://github.com/physics-codes).
 
 ### Some interesting libraries, built on top of the main Scientific stack
 

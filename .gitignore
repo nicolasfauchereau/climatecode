@@ -3,5 +3,6 @@
 .ipynb_checkpoints
 *.db
 *.pkl
+*.npy
 *.csv
 TODO.md
