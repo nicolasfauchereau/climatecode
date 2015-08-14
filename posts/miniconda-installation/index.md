@@ -64,7 +64,7 @@ replicate the examples given in this blog.
 
     for item in ${packages[*]}
     do
-        echo "====================================================================="
+        echo "=====================================================================";
         echo "installing ${item}";
         ${INSTALL_DIR}/miniconda/bin/conda install --yes ${item};
     done

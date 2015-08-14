@@ -173,7 +173,7 @@ chmod +x miniconda.sh
 
 <span class="k">for</span> item in <span class="si">${</span><span class="nv">packages</span><span class="p">[*]</span><span class="si">}</span>
 <span class="k">do</span>
-    <span class="nb">echo</span> <span class="s2">"====================================================================="</span>
+    <span class="nb">echo</span> <span class="s2">"====================================================================="</span><span class="p">;</span>
     <span class="nb">echo</span> <span class="s2">"installing </span><span class="si">${</span><span class="nv">item</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span>
     <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda install --yes <span class="si">${</span><span class="nv">item</span><span class="si">}</span><span class="p">;</span>
 <span class="k">done</span>
