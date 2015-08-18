@@ -7,35 +7,47 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/about.xml</loc>
-  <lastmod>2015-08-06T08:40:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/books.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/cat_resources.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/eof.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooks.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooksi.xml</loc>
   <lastmod>2015-08-03T02:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/jupyter.xml</loc>
+  <lastmod>2015-08-18T01:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/libraries.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/netcdf.xml</loc>
-  <lastmod>2015-08-11T03:36:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/nikola.xml</loc>
+  <lastmod>2015-08-18T01:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/notebook.xml</loc>
+  <lastmod>2015-08-18T01:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/olr.xml</loc>
@@ -43,19 +55,19 @@
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-science.xml</loc>
-  <lastmod>2015-08-06T08:40:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-source.xml</loc>
-  <lastmod>2015-08-06T08:40:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/resources.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/sst.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tag1.xml</loc>
@@ -67,22 +79,22 @@
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tutorials.xml</loc>
-  <lastmod>2015-08-11T23:01:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/xray.xml</loc>
-  <lastmod>2015-08-11T03:36:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/galleries/rss.xml</loc>
-  <lastmod>2015-08-11T03:45:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/rss.xml</loc>
-  <lastmod>2015-08-13T04:51:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/sitemap.xml</loc>
-  <lastmod>2015-08-13T04:51:00Z</lastmod>
+  <lastmod>2015-08-18T23:10:00Z</lastmod>
  </sitemap>
 </sitemapindex>
