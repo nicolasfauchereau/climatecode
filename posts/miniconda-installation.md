@@ -60,7 +60,13 @@ replicate the examples given in this blog.
     "scikit-learn"
     "statsmodels"
     "odo"
-    "dask")
+    "dask"
+    "pyproj"
+    "gdal"
+    "fiona"
+    "shapely"
+    "rasterio"
+    )
 
     for item in ${packages[*]}
     do

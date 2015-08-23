@@ -54,7 +54,13 @@ replicate the examples given in this blog.
 49
 50
 51
-52</pre></div></td><td class="code"><pre class="code literal-block"><span class="c">#!/usr/bin/env bash</span>
+52
+53
+54
+55
+56
+57
+58</pre></div></td><td class="code"><pre class="code literal-block"><span class="c">#!/usr/bin/env bash</span>
 <span class="c"># DOWNLOAD AND INSTALLS THE MINICONDA Python distribution</span>
 <span class="c"># and a suite of Scientific Python packages</span>
 <span class="c"># Nicolas Fauchereau &lt;Nicolas.Fauchereau@niwa.co.nz&gt;</span>
@@ -98,7 +104,13 @@ chmod +x miniconda.sh
 <span class="s2">&quot;scikit-learn&quot;</span>
 <span class="s2">&quot;statsmodels&quot;</span>
 <span class="s2">&quot;odo&quot;</span>
-<span class="s2">&quot;dask&quot;</span><span class="o">)</span>
+<span class="s2">&quot;dask&quot;</span>
+<span class="s2">&quot;pyproj&quot;</span>
+<span class="s2">&quot;gdal&quot;</span>
+<span class="s2">&quot;fiona&quot;</span>
+<span class="s2">&quot;shapely&quot;</span>
+<span class="s2">&quot;rasterio&quot;</span>
+<span class="o">)</span>
 
 <span class="k">for</span> item in <span class="si">${</span><span class="nv">packages</span><span class="p">[*]</span><span class="si">}</span>
 <span class="k">do</span>
