@@ -368,7 +368,7 @@ HIDDEN_CATEGORIES = []
 # INDEX_PATH = ""
 
 # Create per-month archives instead of per-year
-CREATE_MONTHLY_ARCHIVE = True
+CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
 # CREATE_SINGLE_ARCHIVE = False
 # Create year, month, and day archives each with a (long) list of posts
