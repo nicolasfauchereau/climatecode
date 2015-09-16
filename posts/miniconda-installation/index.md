@@ -74,3 +74,9 @@ replicate the examples given in this blog.
         echo "installing ${item}";
         ${INSTALL_DIR}/miniconda/bin/conda install --yes ${item};
     done
+
+    # install pip     
+    ${INSTALL_DIR}/miniconda/bin/conda install --yes pip;
+
+    # install palettable
+    ${INSTALL_DIR}/miniconda/bin/pip install palettable --proxy http://proxy_url:port
