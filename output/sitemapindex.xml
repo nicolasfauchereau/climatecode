@@ -38,6 +38,14 @@
   <lastmod>2015-09-14T04:06:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/matplotlib.xml</loc>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/meter.xml</loc>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/netcdf.xml</loc>
   <lastmod>2015-09-14T04:06:00Z</lastmod>
  </sitemap>
@@ -91,10 +99,10 @@
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/rss.xml</loc>
-  <lastmod>2015-09-14T04:06:00Z</lastmod>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://nicolasfauchereau.github.io/climatecode/sitemap.xml</loc>
-  <lastmod>2015-09-14T04:06:00Z</lastmod>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </sitemap>
 </sitemapindex>

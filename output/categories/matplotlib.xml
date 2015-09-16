@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cracking the climate code (matplotlib)</title><link>http://nicolasfauchereau.github.io/climatecode/</link><description></description><atom:link href="http://nicolasfauchereau.github.io/climatecode/categories/matplotlib.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 16 Sep 2015 07:59:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>drawing a gauge with matplotlib</title><link>http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this post, I will show how to play with &lt;a href="http://www.matplotlib.org"&gt;matplotlib&lt;/a&gt;'s patches to create a &lt;em&gt;gauge&lt;/em&gt; or &lt;em&gt;meter&lt;/em&gt;, the goal will be to get something like the &lt;a href="http://www.bom.gov.au/climate/enso/"&gt;Australian Bureau of Meteorology's ENSO tracker&lt;/a&gt; below&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://www.bom.gov.au/climate/enso/tracker/images/dial-5.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>matplotlib</category><category>meter</category><guid>http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/</guid><pubDate>Wed, 16 Sep 2015 06:55:29 GMT</pubDate></item></channel></rss>
