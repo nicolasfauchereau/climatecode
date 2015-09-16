@@ -60,7 +60,13 @@ replicate the examples given in this blog.
 55
 56
 57
-58</pre></div></td><td class="code"><pre class="code literal-block"><span class="c">#!/usr/bin/env bash</span>
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><pre class="code literal-block"><span class="c">#!/usr/bin/env bash</span>
 <span class="c"># DOWNLOAD AND INSTALLS THE MINICONDA Python distribution</span>
 <span class="c"># and a suite of Scientific Python packages</span>
 <span class="c"># Nicolas Fauchereau &lt;Nicolas.Fauchereau@niwa.co.nz&gt;</span>
@@ -118,5 +124,11 @@ chmod +x miniconda.sh
     <span class="nb">echo</span> <span class="s2">&quot;installing </span><span class="si">${</span><span class="nv">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
     <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda install --yes <span class="si">${</span><span class="nv">item</span><span class="si">}</span><span class="p">;</span>
 <span class="k">done</span>
+
+<span class="c"># install pip     </span>
+<span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda install --yes pip<span class="p">;</span>
+
+<span class="c"># install palettable</span>
+<span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/pip install palettable --proxy http://proxy_url:port
 </pre>
 </td></tr></table>
