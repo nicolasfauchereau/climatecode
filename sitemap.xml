@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/</loc>
-  <lastmod>2015-09-14T04:06:00Z</lastmod>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/about/</loc>
@@ -60,6 +60,14 @@
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/libraries/</loc>
   <lastmod>2015-09-14T04:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/matplotlib/</loc>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/categories/meter/</loc>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/netcdf/</loc>
@@ -124,6 +132,10 @@
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/blogging-with-nikola-and-the-jupyter-notebooks/</loc>
   <lastmod>2015-08-19T07:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/</loc>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/</loc>
