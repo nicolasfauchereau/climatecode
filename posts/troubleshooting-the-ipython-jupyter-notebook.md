@@ -1,6 +1,6 @@
 <!--
 .. title: troubleshooting
-.. slug: troubleshooting-the-ipython-jupyter-notebook
+.. slug: troubleshooting
 .. date: 2015-09-19 16:47:51 UTC+12:00
 .. tags: ipython,notebook,troubleshooting
 .. category:
