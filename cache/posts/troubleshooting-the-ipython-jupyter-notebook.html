@@ -1,0 +1,164 @@
+<p>In this post I am giving some pointers to troubleshoot issues when installing packages via <a href="http://conda.pydata.org/docs/intro.html">conda</a> or <a href="https://pip.pypa.io/en/stable/">pip</a>, as well
+as some pointers to solve issues running the <a href="https://jupyter.org">ipython (now jupyter)</a> notebook on a machine behind a proxy.</p>
+<p><br>
+<!-- TEASER_END --></p>
+<h2>install packages via conda or pip behind a proxy</h2>
+<p>You might run into some problems installing additional libraries via <code>conda</code> or <code>pip</code> and / or running the IPython notebooks, especially on Windows machines behind a proxy, here are a few solutions that may work:</p>
+<p><br>
+<strong>1. Proxy settings for conda:</strong>
+<br></p>
+<p><br>
+create a <code>.condarc</code> file (the '.' is important) in your HOME directory (on windows it should be <code>C:\Users\YOU</code>) and add the following lines:</p>
+<p><br></p>
+<pre class="code literal-block"><span class="n">proxy_servers</span><span class="o">:</span>
+    <span class="n">http</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">url</span><span class="o">:</span><span class="n">port</span>
+    <span class="n">https</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">url</span><span class="o">:</span><span class="n">port</span>
+</pre>
+
+
+<p><br></p>
+<p><br>
+<strong>2. specify proxy when using pip</strong>
+<br></p>
+<p><br>
+If you are running into issues installing libraries via pip, try specifying the proxy to use at the command line, e.g.</p>
+<p><br></p>
+<pre class="code literal-block">pip install --proxy=http://url:port bearcart
+</pre>
+
+
+<p><br></p>
+<p><strong>3. Set-up system-wide proxy settings</strong>
+<br></p>
+<p><br></p>
+<p>On Macs: in your <code>${HOME}/.bash_profile</code>, insert these lines</p>
+<pre class="code literal-block">export http_proxy=http://url:port
+export https_proxy=http://url:port
+</pre>
+
+
+<p><br>
+On Linux machines, do the same as above in your <code>${HOME}/.bashrc</code></p>
+<p><br></p>
+<p>On Windows machines:</p>
+<p>As an administrator go to <code>Control Panel | System | Advanced Systems Settings | Advanced Tab | Environment Variables | System Variables | New</code> and set</p>
+<pre class="code literal-block">HTTP_PROXY=http://url:port/
+HTTPS_PROXY=https://url:port/
+</pre>
+
+
+<p>You can also do that in a command window by typing (the <code>$</code> represents the prompt)</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>SET <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://url:port/
+<span class="nv">$ </span>SET <span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://url:port/
+</pre>
+
+
+<p><br></p>
+<p><br></p>
+<h2>troubleshooting the ipython notebook</h2>
+<p><br>
+<strong>1. use Firefox instead of internet explorer to open the notebooks</strong>
+<br></p>
+<p><br>
+The IPython notebook is an interactive web-based 'notebook', where executable python code can be weaved with rich comments, graphic outputs etc, which make it ideal for presenting interactive tutorials. When (in a command prompt) you navigate to the directory where you have downloaded the notebooks and type (the $ sign represent the prompt):</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython notebook
+</pre>
+
+
+<p><br></p>
+<p><br>
+a 'dashboard' with the list of notebooks should come up in your browser ... now if you are on windows, chances are that your default browser is Internet Explorer, which is generally bad news. If you encounter problems (blank page, notebooks not loading, kernel interruptions etc), it's probably because of Internet Explorer. What I suggest is that you download Firefox for windows and make it the default browser to open IPython notebooks. To do that you need (once firefox is installed) to do the following :</p>
+<p>in a command prompt type (again $ is the prompt):</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython profile create default
+</pre>
+
+
+<p><br></p>
+<p><br>
+it should create a bunch of configuration files in the following directory:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">C:\Users\YOU\.ipython\profile_default
+</pre>
+
+
+<p><br></p>
+<p><br>
+go and edit the <code>ipython_notebook_config.py</code> file
+<br></p>
+<p><br>
+search for the line
+<br></p>
+<p><br></p>
+<pre class="code literal-block">#c.NotebookApp.browser =&#39;&#39;
+</pre>
+
+
+<p><br></p>
+<p><br>
+  and replace it by:
+<br></p>
+<p><br></p>
+<pre class="code literal-block"><span class="kn">import</span> <span class="nn">webbrowser</span>
+<span class="n">webbrowser</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">&#39;firefox&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">webbrowser</span><span class="o">.</span><span class="n">GenericBrowser</span><span class="p">(</span><span class="s">&#39;C:</span><span class="se">\\</span><span class="s">Program Files (x86)</span><span class="se">\\</span><span class="s">Mozilla Firefox</span><span class="se">\\</span><span class="s">firefox.exe&#39;</span><span class="p">))</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="s">&#39;firefox&#39;</span>
+</pre>
+
+
+<p><br></p>
+<p><br>
+<strong>2. Specify localhost when calling the IPython notebook</strong>
+<br></p>
+<p><br>
+On some configurations, you might also need to call:
+<br></p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython notebook --ip<span class="o">=</span>127.0.0.1
+</pre>
+
+
+<p><br></p>
+<p><br>
+To specify that the browser should connect to <em>localhost</em>
+<br></p>
+<p><br>
+<strong>3. Clear the cache</strong>
+<br></p>
+<p><br>
+If you are still running into issues (notably dashboard or IPython notebook not displaying correctly), try clearing the cache of your browser
+<br></p>
+<p><br>
+<strong>4. Use an <code>incognito</code> window and the <code>no-browser</code> argument</strong>
+<br></p>
+<p><br>
+If all else fails (!), one thing that has been reported working is:
+<br></p>
+<p><br>
++ launch the <code>ipython notebook</code> in no-browser mode:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">ipython notebook --no-browser
+</pre>
+
+
+<p><br></p>
+<p><br>
+You should see an output in the terminal looking like:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">...
+The IPython Notebook is running at: http://localhost:8888/
+...
+</pre>
+
+
+<p><br></p>
+<p><br>
+Note that the URL and port could be different in your case.
+<br></p>
+<p><br>
+Open an <code>incognito</code> window from your browser and copy the URL (<code>http://localhost:8888/</code>) in the address bar
+<br></p>

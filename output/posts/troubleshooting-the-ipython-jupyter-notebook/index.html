@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>troubleshooting | cracking the climate code</title>
+<link href="../../assets/css/bitter.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://nicolasfauchereau.github.io/climatecode/posts/troubleshooting-the-ipython-jupyter-notebook/">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Nicolas Fauchereau">
+<meta property="og:site_name" content="cracking the climate code">
+<meta property="og:title" content="troubleshooting">
+<meta property="og:url" content="http://nicolasfauchereau.github.io/climatecode/posts/troubleshooting-the-ipython-jupyter-notebook/">
+<meta property="og:description" content="In this post I am giving some pointers to troubleshoot issues when installing packages via conda or pip, as well
+as some pointers to solve issues running the ipython (now jupyter) notebook on a machin">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-09-19T16:47:51+12:00">
+<meta property="article:tag" content="ipython">
+<meta property="article:tag" content="notebook">
+<meta property="article:tag" content="troubleshooting">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../stories/about-me" title="About me"><i class="icon-user"></i></a></li>
+            <li><a href="https://twitter.com/nfauchereau" title="Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/nicolasfauchereau" title="Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://nz.linkedin.com/pub/nicolas-fauchereau/7/6b2/469" title="Linkedin"><i class="icon-linkedin"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">troubleshooting</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-09-19T16:47:51+12:00">2015-09-19 16:47</time>
+            
+                      |  
+        <a href="index.md" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../categories/ipython/" rel="tag">ipython</a></li>
+           <li><a class="tag p-category" href="../../categories/notebook/" rel="tag">notebook</a></li>
+           <li><a class="tag p-category" href="../../categories/troubleshooting/" rel="tag">troubleshooting</a></li>
+        </ul>
+</div>
+
+        </div>
+        <div class="body">
+            <div>
+<p>In this post I am giving some pointers to troubleshoot issues when installing packages via <a href="http://conda.pydata.org/docs/intro.html">conda</a> or <a href="https://pip.pypa.io/en/stable/">pip</a>, as well
+as some pointers to solve issues running the <a href="https://jupyter.org">ipython (now jupyter)</a> notebook on a machine behind a proxy.</p>
+<p><br><!-- TEASER_END --></p>
+<h3>install packages via conda or pip behind a proxy</h3>
+<p>You might run into some problems installing additional libraries via <code>conda</code> or <code>pip</code> and / or running the IPython notebooks, especially on Windows machines behind a proxy, here are a few solutions that may work:</p>
+<p><br><strong>1. Proxy settings for conda:</strong>
+<br></p>
+<p><br>
+create a <code>.condarc</code> file (the '.' is important) in your HOME directory (on windows it should be <code>C:\Users\YOU</code>) and add the following lines:</p>
+<p><br></p>
+<pre class="code literal-block"><span class="n">proxy_servers</span><span class="o">:</span>
+    <span class="n">http</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">url</span><span class="o">:</span><span class="n">port</span>
+    <span class="n">https</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">url</span><span class="o">:</span><span class="n">port</span>
+</pre>
+
+
+<p><br></p>
+<p><br><strong>2. specify proxy when using pip</strong>
+<br></p>
+<p><br>
+If you are running into issues installing libraries via pip, try specifying the proxy to use at the command line, e.g.</p>
+<p><br></p>
+<pre class="code literal-block">pip install --proxy=http://url:port bearcart
+</pre>
+
+
+<p><br></p>
+<p><strong>3. Set-up system-wide proxy settings</strong>
+<br></p>
+<p><br></p>
+<p>On Macs: in your <code>${HOME}/.bash_profile</code>, insert these lines</p>
+<pre class="code literal-block">export http_proxy=http://url:port
+export https_proxy=http://url:port
+</pre>
+
+
+<p><br>
+On Linux machines, do the same as above in your <code>${HOME}/.bashrc</code></p>
+<p><br></p>
+<p>On Windows machines:</p>
+<p>As an administrator go to <code>Control Panel | System | Advanced Systems Settings | Advanced Tab | Environment Variables | System Variables | New</code> and set</p>
+<pre class="code literal-block">HTTP_PROXY=http://url:port/
+HTTPS_PROXY=https://url:port/
+</pre>
+
+
+<p>You can also do that in a command window by typing (the <code>$</code> represents the prompt)</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>SET <span class="nv">HTTP_PROXY</span><span class="o">=</span>http://url:port/
+<span class="nv">$ </span>SET <span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://url:port/
+</pre>
+
+
+<p><br></p>
+<p><br></p>
+<h3>troubleshooting the ipython notebook</h3>
+<p><br><strong>1. use Firefox instead of internet explorer to open the notebooks</strong>
+<br></p>
+<p><br>
+The IPython notebook is an interactive web-based 'notebook', where executable python code can be weaved with rich comments, graphic outputs etc, which make it ideal for presenting interactive tutorials. When (in a command prompt) you navigate to the directory where you have downloaded the notebooks and type (the $ sign represent the prompt):</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython notebook
+</pre>
+
+
+<p><br></p>
+<p><br>
+a 'dashboard' with the list of notebooks should come up in your browser ... now if you are on windows, chances are that your default browser is Internet Explorer, which is generally bad news. If you encounter problems (blank page, notebooks not loading, kernel interruptions etc), it's probably because of Internet Explorer. What I suggest is that you download Firefox for windows and make it the default browser to open IPython notebooks. To do that you need (once firefox is installed) to do the following :</p>
+<p>in a command prompt type (again $ is the prompt):</p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython profile create default
+</pre>
+
+
+<p><br></p>
+<p><br>
+it should create a bunch of configuration files in the following directory:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">C:\Users\YOU\.ipython\profile_default
+</pre>
+
+
+<p><br></p>
+<p><br>
+go and edit the <code>ipython_notebook_config.py</code> file
+<br></p>
+<p><br>
+search for the line
+<br></p>
+<p><br></p>
+<pre class="code literal-block">#c.NotebookApp.browser =''
+</pre>
+
+
+<p><br></p>
+<p><br>
+  and replace it by:
+<br></p>
+<p><br></p>
+<pre class="code literal-block"><span class="kn">import</span> <span class="nn">webbrowser</span>
+<span class="n">webbrowser</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">'firefox'</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">webbrowser</span><span class="o">.</span><span class="n">GenericBrowser</span><span class="p">(</span><span class="s">'C:</span><span class="se">\\</span><span class="s">Program Files (x86)</span><span class="se">\\</span><span class="s">Mozilla Firefox</span><span class="se">\\</span><span class="s">firefox.exe'</span><span class="p">))</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="s">'firefox'</span>
+</pre>
+
+
+<p><br></p>
+<p><br><strong>2. Specify localhost when calling the IPython notebook</strong>
+<br></p>
+<p><br>
+On some configurations, you might also need to call:
+<br></p>
+<p><br></p>
+<pre class="code literal-block"><span class="nv">$ </span>ipython notebook --ip<span class="o">=</span>127.0.0.1
+</pre>
+
+
+<p><br></p>
+<p><br>
+To specify that the browser should connect to <em>localhost</em>
+<br></p>
+<p><br><strong>3. Clear the cache</strong>
+<br></p>
+<p><br>
+If you are still running into issues (notably dashboard or IPython notebook not displaying correctly), try clearing the cache of your browser
+<br></p>
+<p><br><strong>4. Use an <code>incognito</code> window and the <code>no-browser</code> argument</strong>
+<br></p>
+<p><br>
+If all else fails (!), one thing that has been reported working is:
+<br></p>
+<p><br>
++ launch the <code>ipython notebook</code> in no-browser mode:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">ipython notebook --no-browser
+</pre>
+
+
+<p><br></p>
+<p><br>
+You should see an output in the terminal looking like:
+<br></p>
+<p><br></p>
+<pre class="code literal-block">...
+The IPython Notebook is running at: http://localhost:8888/
+...
+</pre>
+
+
+<p><br></p>
+<p><br>
+Note that the URL and port could be different in your case.
+<br></p>
+<p><br>
+Open an <code>incognito</code> window from your browser and copy the URL (<code>http://localhost:8888/</code>) in the address bar
+<br></p>
+</div>
+        </div>
+                <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../building-an-enso-tracker-with-matplotlib/" rel="prev" title="building an ENSO tracker with Matplotlib">Previous post</a>
+            </li>
+        </ul>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="climatecode",
+            disqus_url="http://nicolasfauchereau.github.io/climatecode/posts/troubleshooting-the-ipython-jupyter-notebook/",
+        disqus_title="troubleshooting",
+        disqus_identifier="cache/posts/troubleshooting-the-ipython-jupyter-notebook.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </div>
+                    <footer id="footer"><p></p>
+<hr>Contents © 2015 <a href="mailto:nicolas.fauchereau@gmail.com">Nicolas Fauchereau</a> 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:0px;" src="https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a>
+<br>Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, zen-ipython theme from <a href="http://www.damian.oquanta.info">Damian Avila</a>
+            
+        </footer>
+</div>
+    </section><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66126333-1', 'auto');
+  ga('send', 'pageview');
+
+</script><script src="../../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../../assets/js/mathjax.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>    Share</a>
+<ul>
+<li>
+<a class="addthis_button_twitter"><i class="icon-twitter icon-2x"></i>    Twitter</a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"><i class="icon-google-plus-sign icon-2x"></i>    Google+</a>
+</li>
+<li>
+<a class="addthis_button_linkedin"><i class="icon-linkedin icon-2x"></i>    Linkedin</a>
+</li>
+<li>
+<a class="addthis_button_facebook"><i class="icon-facebook-sign icon-2x"></i>    Facebook</a>
+</li>
+</ul>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>
