@@ -31,7 +31,7 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 ### Real-time acquisition, physical programming
 
-+ [pyserial](http://pyserial.sourceforge.net): Module that encapsulates the access for the serial port
++ [pyserial](https://github.com/pyserial/pyserial): Module that encapsulates the access for the serial port
 + [Real World Instrumentation, Automated Data Acquisition and Control Systems](http://www.amazon.com/Real-World-Instrumentation-Python-Acquisition/dp/0596809565): A book available on Amazon.
 + [Programming Raspberry Pi: Getting Started with Python](http://www.monkmakes.com/?page_id=63): book (not free) with code (free)
 + [PyVISA](https://pyvisa.readthedocs.org/en/latest/): The PyVISA package enables you to control all kinds of measurement equipment through various busses (GPIB, RS232, USB) with Python programs
