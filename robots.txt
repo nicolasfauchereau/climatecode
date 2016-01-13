@@ -1,2 +1,4 @@
 Sitemap: http://nicolasfauchereau.github.io/climatecode/sitemapindex.xml
 
+User-Agent: *
+Host: nicolasfauchereau.github.io
