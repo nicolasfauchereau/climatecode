@@ -66,37 +66,37 @@ replicate the examples given in this blog.
 61
 62
 63
-64</pre></div></td><td class="code"><pre class="code literal-block"><span class="c">#!/usr/bin/env bash</span>
-<span class="c"># DOWNLOAD AND INSTALLS THE MINICONDA Python distribution</span>
-<span class="c"># and a suite of Scientific Python packages</span>
-<span class="c"># Nicolas Fauchereau &lt;Nicolas.Fauchereau@niwa.co.nz&gt;</span>
-<span class="c"># 13/08/2015</span>
-<span class="c"># ==============================================================================</span>
+64</pre></div></td><td class="code"><pre class="code literal-block"><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># DOWNLOAD AND INSTALLS THE MINICONDA Python distribution</span>
+<span class="c1"># and a suite of Scientific Python packages</span>
+<span class="c1"># Nicolas Fauchereau &lt;Nicolas.Fauchereau@niwa.co.nz&gt;</span>
+<span class="c1"># 13/08/2015</span>
+<span class="c1"># ==============================================================================</span>
 
-<span class="c"># download the minimal anaconda distribution (! uncomment the line</span>
-<span class="c"># corresponding to your platform [linux or mac])</span>
-<span class="c">#wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh</span>
-<span class="c">#wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh</span>
+<span class="c1"># download the minimal anaconda distribution (! uncomment the line</span>
+<span class="c1"># corresponding to your platform [linux or mac])</span>
+<span class="c1">#wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh</span>
+<span class="c1">#wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh</span>
 
-<span class="c"># make the installer executable</span>
+<span class="c1"># make the installer executable</span>
 chmod +x miniconda.sh
 
-<span class="c"># set the installation directory, by default your HOME directory</span>
+<span class="c1"># set the installation directory, by default your HOME directory</span>
 <span class="nv">INSTALL_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>
 
-<span class="c"># run the installer</span>
+<span class="c1"># run the installer</span>
 ./miniconda.sh -b -p <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda
 
-<span class="c"># add this line in the end of your .bashrc (linux) or .bash_profile (mac)</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="c1"># add this line in the end of your .bashrc (linux) or .bash_profile (mac)</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 
-<span class="c"># update conda (the package and environment manager) to the latest version</span>
+<span class="c1"># update conda (the package and environment manager) to the latest version</span>
 <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda update --yes conda
 
-<span class="c"># install the required packages into</span>
-<span class="c"># $INSTALL_DIR/miniconda/lib/python3.4/site-packages</span>
-<span class="c"># NOTE: this package list might be expanded in the future, so I might</span>
-<span class="c"># want to read if off a &quot;requirements.txt&quot; file ...</span>
+<span class="c1"># install the required packages into</span>
+<span class="c1"># $INSTALL_DIR/miniconda/lib/python3.4/site-packages</span>
+<span class="c1"># NOTE: this package list might be expanded in the future, so I might</span>
+<span class="c1"># want to read if off a &quot;requirements.txt&quot; file ...</span>
 
 <span class="nv">packages</span><span class="o">=(</span><span class="s2">&quot;ipython-notebook&quot;</span>
 <span class="s2">&quot;numpy&quot;</span>
@@ -125,10 +125,10 @@ chmod +x miniconda.sh
     <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda install --yes <span class="si">${</span><span class="nv">item</span><span class="si">}</span><span class="p">;</span>
 <span class="k">done</span>
 
-<span class="c"># install pip     </span>
+<span class="c1"># install pip     </span>
 <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/conda install --yes pip<span class="p">;</span>
 
-<span class="c"># install palettable</span>
+<span class="c1"># install palettable</span>
 <span class="si">${</span><span class="nv">INSTALL_DIR</span><span class="si">}</span>/miniconda/bin/pip install palettable --proxy http://proxy_url:port
 </pre>
 </td></tr></table>
