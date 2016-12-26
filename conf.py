@@ -653,9 +653,9 @@ INDEX_TEASERS = True
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
 INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 # 'Read more...' for the RSS_FEED, if RSS_TEASERS is True (translatable)
-RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
 
-# Append a URL query to the RSS_READ_MORE_LINK in Atom and RSS feeds. Advanced
+# Append a URL query to the FEED_READ_MORE_LINK in Atom and RSS feeds. Advanced
 # option used for traffic source tracking.
 # Minimum example for use with Piwik: "pk_campaign=feed"
 # The following tags exist and are replaced for you:
@@ -663,7 +663,7 @@ RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_rea
 # {feedFormat}                  The name of the syndication format.
 # Example using replacement for use with Google Analytics:
 # "utm_source={feedRelUri}&utm_medium=nikola_feed&utm_campaign={feedFormat}_feed"
-RSS_LINKS_APPEND_QUERY = False
+FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
@@ -875,7 +875,7 @@ SHOW_SOURCELINK = True
 # them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.
 # Atom feeds are built based on INDEX_DISPLAY_POST_COUNT and not FEED_LENGTH
 # Switch between plain-text summaries and full HTML content using the
-# RSS_TEASER option. RSS_LINKS_APPEND_QUERY is also respected. Atom feeds
+# RSS_TEASER option. FEED_LINKS_APPEND_QUERY is also respected. Atom feeds
 # are generated even for old indexes and have pagination link relations
 # between each other. Old Atom feeds with no changes are marked as archived.
 # GENERATE_ATOM = False

@@ -44,7 +44,7 @@ A  - totally incomplete - list of resources I have come across on Python and Pyt
 
 ### Symbolic maths
 
-+ The [SymPy](www.sympy.org) library is a Python library for symbolic mathematics. It supports polynomials, calculus, solving equations, etc
++ The [SymPy](http://www.sympy.org) library is a Python library for symbolic mathematics. It supports polynomials, calculus, solving equations, etc
 + The [sage](http://www.sagemath.org/) software: *Mission: Creating a viable free open source alternative to Magma, Maple, Mathematica and Matlab*
 
 ### Geospatial statistics

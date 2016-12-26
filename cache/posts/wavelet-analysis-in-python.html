@@ -52,8 +52,10 @@
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -197,11 +199,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>we will try and reproduce the examples found in</p>
+<p>we will try and reproduce the examples found in:</p>
 <p><a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0477%281998%29079%3C0061%3AAPGTWA%3E2.0.CO%3B2">A practical guide to wavelet analysis</a></p>
 <p>from Christopher Torrence and Gil P. Compo</p>
-<p>which use the <strong>NINO3.4</strong> seasonal time series</p>
-<p>The NINO3.4 index is calculated as the regional average of Sea - Surface - Temperature (SST) anomalies in the central eastern Pacific [] and is one of the most used indices for tracking the the El Niño - Southern Oscillation phenomenon.</p>
+<p>which use the <strong>NINO3.4</strong> seasonal time series (The <strong>NINO3.4</strong> index is calculated as the regional average of Sea - Surface - Temperature (SST) anomalies in the central eastern Pacific [5°N to 5°S, 170°W to 120°W.] and is one of the most used indices for tracking the the El Niño - Southern Oscillation phenomenon)</p>
 <p>See also the <a href="http://ion.exelisvis.com/">Interactive Wavelet page</a></p>
 <p>We will also see the example of rectification of the bias that exist in favor of large scales</p>
 <!-- TEASER_END -->
@@ -237,10 +238,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 
 </div>
@@ -262,7 +263,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">nino3</span> <span class="o">=</span> <span class="s">&quot;http://paos.colorado.edu/research/wavelets/wave_idl/sst_nino3.dat&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">nino3</span> <span class="o">=</span> <span class="s2">&quot;http://paos.colorado.edu/research/wavelets/wave_idl/sst_nino3.dat&quot;</span>
 </pre></div>
 
 </div>
@@ -275,7 +276,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">nino3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">nino3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">nino3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">nino3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -288,7 +289,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">nino3</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">data</span> <span class="o">=</span> <span class="n">nino3</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -301,7 +302,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">N</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">;</span> <span class="k">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">N</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -328,10 +329,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">t0</span><span class="o">=</span><span class="mi">1871</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">t0</span><span class="o">=</span><span class="mi">1871</span>
 <span class="n">dt</span><span class="o">=</span><span class="mf">0.25</span>
-<span class="n">units</span><span class="o">=</span><span class="s">&#39;^{\circ}C&#39;</span>
-<span class="n">label</span><span class="o">=</span><span class="s">&#39;NINO3 SST&#39;</span>
+<span class="n">units</span><span class="o">=</span><span class="s1">&#39;^{\circ}C&#39;</span>
+<span class="n">label</span><span class="o">=</span><span class="s1">&#39;NINO3 SST&#39;</span>
 </pre></div>
 
 </div>
@@ -344,7 +345,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">t0</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">t0</span>
 </pre></div>
 
 </div>
@@ -366,7 +367,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">waipy</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">waipy</span>
 </pre></div>
 
 </div>
@@ -379,7 +380,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">data_norm</span> <span class="o">=</span> <span class="n">waipy</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">data_norm</span> <span class="o">=</span> <span class="n">waipy</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -392,8 +393,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">data_norm</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data_norm</span><span class="p">[</span><span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">];</span> 
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Lag-1 autocorrelation = {:4.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">data_norm</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data_norm</span><span class="p">[</span><span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">];</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lag-1 autocorrelation = {:4.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -420,7 +421,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">waipy</span><span class="o">.</span><span class="n">cwt</span><span class="p">(</span><span class="n">data_norm</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="o">/</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">mother</span><span class="o">=</span><span class="s">&#39;Morlet&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">waipy</span><span class="o">.</span><span class="n">cwt</span><span class="p">(</span><span class="n">data_norm</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="o">/</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">mother</span><span class="o">=</span><span class="s1">&#39;Morlet&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -466,7 +467,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">waipy</span><span class="o">.</span><span class="n">wavelet_plot</span><span class="o">?</span>
+<div class=" highlight hl-ipython3"><pre>waipy.wavelet_plot<span class="o">?</span>
 </pre></div>
 
 </div>
@@ -479,7 +480,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">waipy</span><span class="o">.</span><span class="n">wavelet_plot</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">data_norm</span><span class="p">,</span> <span class="mf">0.03125</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span> 
+<div class=" highlight hl-ipython3"><pre><span class="n">waipy</span><span class="o">.</span><span class="n">wavelet_plot</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">data_norm</span><span class="p">,</span> <span class="mf">0.03125</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span> 
 </pre></div>
 
 </div>
@@ -3225,7 +3226,7 @@ IkFQE0NEREREREREgvC/C0TWiWmXmfEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">waipy</span> <span class="kn">import</span> <span class="n">wavelet_plot</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">waipy</span> <span class="k">import</span> <span class="n">wavelet_plot</span>
 </pre></div>
 
 </div>
@@ -3238,7 +3239,7 @@ IkFQE0NEREREREREgvC/C0TWiWmXmfEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">wavelet_plot</span><span class="o">??</span>
+<div class=" highlight hl-ipython3"><pre>wavelet_plot<span class="o">??</span>
 </pre></div>
 
 </div>
@@ -3260,7 +3261,7 @@ IkFQE0NEREREREREgvC/C0TWiWmXmfEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">kPyWavelet</span> <span class="kn">as</span> <span class="nn">wavelet</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">kPyWavelet</span> <span class="k">as</span> <span class="nn">wavelet</span>
 </pre></div>
 
 </div>
@@ -3273,36 +3274,36 @@ IkFQE0NEREREREREgvC/C0TWiWmXmfEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">slevel</span> <span class="o">=</span> <span class="mf">0.95</span>                        <span class="c"># Significance level</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">slevel</span> <span class="o">=</span> <span class="mf">0.95</span>                        <span class="c1"># Significance level</span>
 
-<span class="n">std</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>                      <span class="c"># Standard deviation</span>
-<span class="n">std2</span> <span class="o">=</span> <span class="n">std</span> <span class="o">**</span> <span class="mi">2</span>                      <span class="c"># Variance</span>
-<span class="n">var</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">std</span>       <span class="c"># Calculating anomaly and normalizing</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>                      <span class="c1"># Standard deviation</span>
+<span class="n">std2</span> <span class="o">=</span> <span class="n">std</span> <span class="o">**</span> <span class="mi">2</span>                      <span class="c1"># Variance</span>
+<span class="n">var</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">std</span>       <span class="c1"># Calculating anomaly and normalizing</span>
 
-<span class="n">dj</span> <span class="o">=</span> <span class="mf">0.25</span>                            <span class="c"># Four sub-octaves per octaves</span>
-<span class="n">s0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c">#2 * dt                      # Starting scale, here 6 months</span>
-<span class="n">J</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c"># 7 / dj                      # Seven powers of two with dj sub-octaves</span>
+<span class="n">dj</span> <span class="o">=</span> <span class="mf">0.25</span>                            <span class="c1"># Four sub-octaves per octaves</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">#2 * dt                      # Starting scale, here 6 months</span>
+<span class="n">J</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># 7 / dj                      # Seven powers of two with dj sub-octaves</span>
 
-<span class="n">mother</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">Morlet</span><span class="p">(</span><span class="mf">6.</span><span class="p">)</span>          <span class="c"># Morlet mother wavelet with wavenumber=6</span>
+<span class="n">mother</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">Morlet</span><span class="p">(</span><span class="mf">6.</span><span class="p">)</span>          <span class="c1"># Morlet mother wavelet with wavenumber=6</span>
 
-<span class="c"># The following routines perform the wavelet transform and siginificance</span>
-<span class="c"># analysis for the chosen data set.</span>
+<span class="c1"># The following routines perform the wavelet transform and siginificance</span>
+<span class="c1"># analysis for the chosen data set.</span>
 
 <span class="n">wave</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">coi</span><span class="p">,</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreqs</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">cwt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dj</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span>
                                                       <span class="n">mother</span><span class="p">)</span>
 <span class="n">iwave</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">icwt</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dj</span><span class="p">,</span> <span class="n">mother</span><span class="p">)</span>
-<span class="n">power</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">wave</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>             <span class="c"># Normalized wavelet power spectrum</span>
-<span class="n">fft_power</span> <span class="o">=</span> <span class="n">std2</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>     <span class="c"># FFT power spectrum</span>
+<span class="n">power</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">wave</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>             <span class="c1"># Normalized wavelet power spectrum</span>
+<span class="n">fft_power</span> <span class="o">=</span> <span class="n">std2</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>     <span class="c1"># FFT power spectrum</span>
 <span class="n">period</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">freqs</span>
 
 <span class="n">signif</span><span class="p">,</span> <span class="n">fft_theor</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">significance</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span>
                         <span class="n">significance_level</span><span class="o">=</span><span class="n">slevel</span><span class="p">,</span> <span class="n">wavelet</span><span class="o">=</span><span class="n">mother</span><span class="p">)</span>
 <span class="n">sig95</span> <span class="o">=</span> <span class="p">(</span><span class="n">signif</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">sig95</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">sig95</span>                <span class="c"># Where ratio &gt; 1, power is significant</span>
+<span class="n">sig95</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">sig95</span>                <span class="c1"># Where ratio &gt; 1, power is significant</span>
 
-<span class="c"># Calculates the global wavelet spectrum and determines its significance level.</span>
+<span class="c1"># Calculates the global wavelet spectrum and determines its significance level.</span>
 <span class="n">glbl_power</span> <span class="o">=</span> <span class="n">std2</span> <span class="o">*</span> <span class="n">power</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">dof</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">scales</span>                     <span class="c"># Correction for padding at edges</span>
+<span class="n">dof</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">scales</span>                     <span class="c1"># Correction for padding at edges</span>
 <span class="n">glbl_signif</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">wavelet</span><span class="o">.</span><span class="n">significance</span><span class="p">(</span><span class="n">std2</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">scales</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span>
                        <span class="n">significance_level</span><span class="o">=</span><span class="n">slevel</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="n">dof</span><span class="p">,</span> <span class="n">wavelet</span><span class="o">=</span><span class="n">mother</span><span class="p">)</span>
 </pre></div>
@@ -3317,26 +3318,26 @@ IkFQE0NEREREREREgvC/C0TWiWmXmfEAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Second sub-plot, the normalized wavelet power spectrum and significance level</span>
-<span class="c"># contour lines and cone of influece hatched area.</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1"># Second sub-plot, the normalized wavelet power spectrum and significance level</span>
+<span class="c1"># contour lines and cone of influece hatched area.</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0625</span><span class="p">,</span> <span class="mf">0.125</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">power</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span>
-            <span class="n">extend</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="n">sig95</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span>
+            <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="n">sig95</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
            <span class="n">linewidths</span><span class="o">=</span><span class="mf">2.</span><span class="p">)</span>
-<span class="c">#ax.fill(numpy.concatenate([time[:1]-dt, time, time[-1:]+dt, time[-1:]+dt,</span>
-<span class="c">#        time[:1]-dt, time[:1]-dt]), numpy.log2(numpy.concatenate([[1e-9], coi,</span>
-<span class="c">#        [1e-9], period[-1:], period[-1:], [1e-9]])), &#39;k&#39;, alpha=&#39;0.3&#39;,</span>
-<span class="c">#        hatch=&#39;x&#39;)</span>
+<span class="c1">#ax.fill(numpy.concatenate([time[:1]-dt, time, time[-1:]+dt, time[-1:]+dt,</span>
+<span class="c1">#        time[:1]-dt, time[:1]-dt]), numpy.log2(numpy.concatenate([[1e-9], coi,</span>
+<span class="c1">#        [1e-9], period[-1:], period[-1:], [1e-9]])), &#39;k&#39;, alpha=&#39;0.3&#39;,</span>
+<span class="c1">#        hatch=&#39;x&#39;)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi</span><span class="p">),</span> <span class="s">&#39;0.8&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi</span><span class="p">),</span> <span class="s1">&#39;0.8&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi</span><span class="p">),</span> <span class="s">&#39;w--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="c">#ax.plot(time,numpy.log2(coi), &#39;k:&#39;, lw=3)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi</span><span class="p">),</span> <span class="s1">&#39;w--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#ax.plot(time,numpy.log2(coi), &#39;k:&#39;, lw=3)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;b) </span><span class="si">%s</span><span class="s"> Wavelet Power Spectrum (</span><span class="si">%s</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">mother</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Period (years)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;b) </span><span class="si">%s</span><span class="s1"> Wavelet Power Spectrum (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">mother</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Period (years)&#39;</span><span class="p">)</span>
 <span class="n">Yticks</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="o">.</span><span class="n">min</span><span class="p">())),</span>
                            <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="o">.</span><span class="n">max</span><span class="p">())))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">Yticks</span><span class="p">))</span>
@@ -4711,20 +4712,20 @@ X2j/KNqESyzwOsF9pkuZd+8NAQAAAABuQc8eAAAAALgQYQ8AAAAAXIiwBwAAAAAuRNgDAAAAABci
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Third sub-plot, the global wavelet and Fourier power spectra and theoretical</span>
-<span class="c"># noise spectra.</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1"># Third sub-plot, the global wavelet and Fourier power spectra and theoretical</span>
+<span class="c1"># noise spectra.</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">cx</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">glbl_signif</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="s">&#39;k--&#39;</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fft_power</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">fftfreqs</span><span class="p">),</span> <span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">glbl_signif</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fft_power</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">fftfreqs</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
         <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">glbl_power</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="s">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">r&#39;Power&#39;</span><span class="p">)</span>
-<span class="c">#cx.set_xlim([0, glbl_power.max() + std2])</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">glbl_power</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">r&#39;Power&#39;</span><span class="p">)</span>
+<span class="c1">#cx.set_xlim([0, glbl_power.max() + std2])</span>
 <span class="n">cx</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">([</span><span class="n">period</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">period</span><span class="o">.</span><span class="n">max</span><span class="p">()]))</span>
 <span class="n">cx</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">Yticks</span><span class="p">))</span>
 <span class="n">cx</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">Yticks</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Period (years)&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Period (years)&#39;</span><span class="p">)</span>
 
 <span class="n">cx</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
 </pre></div>
@@ -5082,7 +5083,7 @@ LKEAYAkFAEsoAFhCAcAKjrzaKHJ7oRcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">sys</span>
 </pre></div>
 
 </div>
@@ -5095,7 +5096,7 @@ LKEAYAkFAEsoAFhCAcAKjrzaKHJ7oRcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;./&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -5108,7 +5109,7 @@ LKEAYAkFAEsoAFhCAcAKjrzaKHJ7oRcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">wavelib</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">wavelib</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 
 </div>
@@ -5139,9 +5140,9 @@ LKEAYAkFAEsoAFhCAcAKjrzaKHJ7oRcAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
-<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1870</span><span class="p">,</span><span class="mi">2000</span><span class="p">]</span>  <span class="c"># plotting range</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1870</span><span class="p">,</span><span class="mi">2000</span><span class="p">]</span>  <span class="c1"># plotting range</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
 </pre></div>
 
@@ -5553,11 +5554,11 @@ ZdkiZpmxAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">mean</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;mean=&quot;</span><span class="p">,</span><span class="n">mean</span>
-<span class="k">print</span> <span class="s">&quot;std=&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;mean=&quot;</span><span class="p">,</span><span class="n">mean</span>
+<span class="nb">print</span> <span class="s2">&quot;std=&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -5594,12 +5595,12 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pad</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c"># pad the time series with zeroes (recommended)</span>
-<span class="n">dj</span> <span class="o">=</span> <span class="mf">0.25</span>    <span class="c"># this will do 4 sub-octaves per octave</span>
-<span class="n">s0</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">dt</span>    <span class="c"># this says start at a scale of 6 months</span>
-<span class="n">j1</span> <span class="o">=</span> <span class="mf">7.</span><span class="o">/</span><span class="n">dj</span>    <span class="c"># this says do 7 powers-of-two with dj sub-octaves each</span>
-<span class="n">lag1</span> <span class="o">=</span> <span class="mf">0.72</span>  <span class="c"># lag-1 autocorrelation for red noise background</span>
-<span class="n">mother</span> <span class="o">=</span> <span class="s">&#39;Morlet&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">pad</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># pad the time series with zeroes (recommended)</span>
+<span class="n">dj</span> <span class="o">=</span> <span class="mf">0.25</span>    <span class="c1"># this will do 4 sub-octaves per octave</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">dt</span>    <span class="c1"># this says start at a scale of 6 months</span>
+<span class="n">j1</span> <span class="o">=</span> <span class="mf">7.</span><span class="o">/</span><span class="n">dj</span>    <span class="c1"># this says do 7 powers-of-two with dj sub-octaves each</span>
+<span class="n">lag1</span> <span class="o">=</span> <span class="mf">0.72</span>  <span class="c1"># lag-1 autocorrelation for red noise background</span>
+<span class="n">mother</span> <span class="o">=</span> <span class="s1">&#39;Morlet&#39;</span>
 </pre></div>
 
 </div>
@@ -5621,8 +5622,8 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">wave</span><span class="p">,</span><span class="n">period</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="n">coi</span> <span class="o">=</span> <span class="n">wavelet</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">pad</span><span class="p">,</span><span class="n">dj</span><span class="p">,</span><span class="n">s0</span><span class="p">,</span><span class="n">j1</span><span class="p">,</span><span class="n">mother</span><span class="p">);</span>
-<span class="n">power</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>         <span class="c"># compute wavelet power spectrum</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">wave</span><span class="p">,</span><span class="n">period</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="n">coi</span> <span class="o">=</span> <span class="n">wavelet</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">pad</span><span class="p">,</span><span class="n">dj</span><span class="p">,</span><span class="n">s0</span><span class="p">,</span><span class="n">j1</span><span class="p">,</span><span class="n">mother</span><span class="p">);</span>
+<span class="n">power</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">wave</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>         <span class="c1"># compute wavelet power spectrum</span>
 </pre></div>
 
 </div>
@@ -5644,9 +5645,9 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">signif</span><span class="p">,</span><span class="n">fft_theor</span> <span class="o">=</span> <span class="n">wave_signif</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">lag1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mother</span><span class="p">)</span>
-<span class="n">sig95</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">signif</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">signif</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)))</span> <span class="c"># expand signif --&gt; (J+1)x(N) array</span>
-<span class="n">sig95</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">sig95</span>         <span class="c"># where ratio &gt; 1, power is significant</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">signif</span><span class="p">,</span><span class="n">fft_theor</span> <span class="o">=</span> <span class="n">wave_signif</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">lag1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mother</span><span class="p">)</span>
+<span class="n">sig95</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">signif</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">signif</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)))</span> <span class="c1"># expand signif --&gt; (J+1)x(N) array</span>
+<span class="n">sig95</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">sig95</span>         <span class="c1"># where ratio &gt; 1, power is significant</span>
 </pre></div>
 
 </div>
@@ -5659,8 +5660,8 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">global_ws</span> <span class="o">=</span> <span class="n">variance</span><span class="o">*</span><span class="n">power</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>   <span class="c"># time-average over all times</span>
-<span class="n">dof</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">scale</span>  <span class="c"># the -scale corrects for padding at edges</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">global_ws</span> <span class="o">=</span> <span class="n">variance</span><span class="o">*</span><span class="n">power</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>   <span class="c1"># time-average over all times</span>
+<span class="n">dof</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">scale</span>  <span class="c1"># the -scale corrects for padding at edges</span>
 <span class="n">global_signif</span><span class="p">,</span><span class="n">fft_theor</span> <span class="o">=</span> <span class="n">wave_signif</span><span class="p">(</span><span class="n">variance</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">lag1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">dof</span><span class="p">,</span><span class="n">mother</span><span class="p">)</span>
 </pre></div>
 
@@ -5683,11 +5684,11 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">avg</span> <span class="o">=</span> <span class="p">(</span><span class="n">scale</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">scale</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">Cdelta</span> <span class="o">=</span> <span class="mf">0.776</span><span class="p">;</span>   <span class="c"># this is for the MORLET wavelet</span>
-<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">scale</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scale</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)))</span> <span class="c"># expand scale --&gt; (J+1)x(N) array</span>
-<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">scale_avg</span>   <span class="c"># [Eqn(24)]</span>
-<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">variance</span><span class="o">*</span><span class="n">dj</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">Cdelta</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">scale_avg</span><span class="p">[</span><span class="n">avg</span><span class="p">,:])</span>   <span class="c"># [Eqn(24)]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">avg</span> <span class="o">=</span> <span class="p">(</span><span class="n">scale</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">scale</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">Cdelta</span> <span class="o">=</span> <span class="mf">0.776</span><span class="p">;</span>   <span class="c1"># this is for the MORLET wavelet</span>
+<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">scale</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scale</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)))</span> <span class="c1"># expand scale --&gt; (J+1)x(N) array</span>
+<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="n">scale_avg</span>   <span class="c1"># [Eqn(24)]</span>
+<span class="n">scale_avg</span> <span class="o">=</span> <span class="n">variance</span><span class="o">*</span><span class="n">dj</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">Cdelta</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">scale_avg</span><span class="p">[</span><span class="n">avg</span><span class="p">,:])</span>   <span class="c1"># [Eqn(24)]</span>
 <span class="n">scaleavg_signif</span> <span class="p">,</span><span class="n">fft_theor</span><span class="o">=</span> <span class="n">wave_signif</span><span class="p">(</span><span class="n">variance</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">scale</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">lag1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mf">7.9</span><span class="p">],</span><span class="n">mother</span><span class="p">)</span>
 </pre></div>
 
@@ -5701,8 +5702,8 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">iwave</span><span class="o">=</span><span class="n">wavelet_inverse</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dj</span><span class="p">,</span> <span class="s">&quot;Morlet&quot;</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;root square mean error&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data</span><span class="o">-</span><span class="n">iwave</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">),</span><span class="s">&quot;deg C&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">iwave</span><span class="o">=</span><span class="n">wavelet_inverse</span><span class="p">(</span><span class="n">wave</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dj</span><span class="p">,</span> <span class="s2">&quot;Morlet&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;root square mean error&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data</span><span class="o">-</span><span class="n">iwave</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">),</span><span class="s2">&quot;deg C&quot;</span>
 </pre></div>
 
 </div>
@@ -5729,10 +5730,10 @@ std= 1.0
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">#figure size</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1">#figure size</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="c"># subplot positions</span>
+<span class="c1"># subplot positions</span>
 <span class="n">width</span><span class="o">=</span> <span class="mf">0.65</span>
 <span class="n">hight</span> <span class="o">=</span> <span class="mf">0.28</span><span class="p">;</span>
 <span class="n">pos1a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
@@ -5740,70 +5741,70 @@ std= 1.0
 <span class="n">pos1c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.79</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="n">hight</span><span class="p">]</span>
 <span class="n">pos1d</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span>  <span class="mf">0.07</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
 
-<span class="c">#########################################</span>
-<span class="c">#---- a) Original signal</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#---- a) Original signal</span>
+<span class="c1">#########################################</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1a</span><span class="p">)</span>
-<span class="c">#original</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">data</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="c">#reconstruction</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">iwave</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s">&quot;k--&quot;</span><span class="p">)</span>
+<span class="c1">#original</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">data</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="c1">#reconstruction</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">iwave</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s2">&quot;k--&quot;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;NINO3 SST (degC)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;a) NINO3 Sea Surface Temperature (seasonal)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;NINO3 SST (degC)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;a) NINO3 Sea Surface Temperature (seasonal)&#39;</span><span class="p">)</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   b) Wavelet spectrum</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   b) Wavelet spectrum</span>
+<span class="c1">#########################################</span>
 
-<span class="c">#--- Contour plot wavelet power spectrum</span>
+<span class="c1">#--- Contour plot wavelet power spectrum</span>
 <span class="n">bx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1b</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0625</span><span class="p">,</span><span class="mf">0.125</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span> 
 <span class="n">Yticks</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">period</span><span class="p">))),</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">period</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">power</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">))</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">powers</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span> <span class="n">extend</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;rainbow&#39;</span><span class="p">))</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Time (year)&#39;</span><span class="p">)</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Period (years)&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="kn">as</span> <span class="nn">ticker</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">powers</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;rainbow&#39;</span><span class="p">))</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (year)&#39;</span><span class="p">)</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Period (years)&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
 <span class="n">ymajorLocator</span><span class="o">=</span><span class="n">ticker</span><span class="o">.</span><span class="n">FixedLocator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">Yticks</span><span class="p">))</span>
 <span class="n">bx</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span> <span class="n">ymajorLocator</span> <span class="p">)</span>
 <span class="n">ticks</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">(</span><span class="n">Yticks</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;b) Wavelet Power Spectrum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b) Wavelet Power Spectrum&#39;</span><span class="p">)</span>
 
-<span class="c"># 95% significance contour, levels at -99 (fake) and 1 (95% signif)</span>
-<span class="n">cs</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">sig95</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 95% significance contour, levels at -99 (fake) and 1 (95% signif)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">sig95</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c"># cone-of-influence, anything &quot;below&quot; is dubious</span>
+<span class="c1"># cone-of-influence, anything &quot;below&quot; is dubious</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="p">;</span>
 <span class="n">coi_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)],</span> <span class="n">coi</span><span class="p">,</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)]])</span>
 <span class="n">ts_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">ts</span><span class="p">,</span> <span class="p">[</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]]);</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">F</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   c) Global Wavelet spectrum</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   c) Global Wavelet spectrum</span>
+<span class="c1">#########################################</span>
 
-<span class="c">#--- Plot global wavelet spectrum</span>
+<span class="c1">#--- Plot global wavelet spectrum</span>
 <span class="n">cx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1c</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="n">bx</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_ws</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_signif</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_ws</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_signif</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 <span class="n">ylim</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">([</span><span class="n">period</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">period</span><span class="o">.</span><span class="n">max</span><span class="p">()]))</span>
 <span class="n">cx</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
 <span class="n">xrangec</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.25</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">global_ws</span><span class="p">)])</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   d) Scale average Spectrum</span>
-<span class="c">#########################################</span>
-<span class="c">#--- Plot Scale-averaged spectrum -----------------</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   d) Scale average Spectrum</span>
+<span class="c1">#########################################</span>
+<span class="c1">#--- Plot Scale-averaged spectrum -----------------</span>
 <span class="n">dx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1d</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="n">bx</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">scale_avg</span><span class="p">,</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[</span><span class="n">scaleavg_signif</span><span class="p">,</span><span class="n">scaleavg_signif</span><span class="p">],</span><span class="s">&quot;k--&quot;</span><span class="p">)</span>
-<span class="nb">xrange</span><span class="o">=</span><span class="n">dx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Avg variance (degC$^2$)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;d) Scale-average Time Series&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&quot;nino3_TorrenceCompo.png&quot;</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">scale_avg</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[</span><span class="n">scaleavg_signif</span><span class="p">,</span><span class="n">scaleavg_signif</span><span class="p">],</span><span class="s2">&quot;k--&quot;</span><span class="p">)</span>
+<span class="n">xrange</span><span class="o">=</span><span class="n">dx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Avg variance (degC$^2$)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;d) Scale-average Time Series&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;nino3_TorrenceCompo.png&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -9664,25 +9665,25 @@ rP8HCD9OZ5Jd/PwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">########################</span>
-<span class="c">#  Spectrum</span>
-<span class="c">########################</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1">########################</span>
+<span class="c1">#  Spectrum</span>
+<span class="c1">########################</span>
 <span class="n">powers</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">power</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scale</span><span class="p">)):</span>
     <span class="n">powers</span><span class="p">[</span><span class="n">k</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">power</span><span class="p">[</span><span class="n">k</span><span class="p">,:]</span><span class="o">/</span><span class="n">scale</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-<span class="c">#significance: sig95 is already normalized = 1</span>
+<span class="c1">#significance: sig95 is already normalized = 1</span>
 
-<span class="c">########################</span>
-<span class="c">#  Spectrum</span>
-<span class="c">########################</span>
+<span class="c1">########################</span>
+<span class="c1">#  Spectrum</span>
+<span class="c1">########################</span>
 <span class="n">global_wss</span> <span class="o">=</span> <span class="n">global_ws</span><span class="o">/</span><span class="n">scale</span>   
 <span class="n">global_signifs</span><span class="o">=</span><span class="n">global_signif</span><span class="o">/</span><span class="n">scale</span>
 
-<span class="c">########################</span>
-<span class="c">#  Scale-average between El Nino periods of 2--8 years</span>
-<span class="c">########################</span>
-<span class="c"># No need to change </span>
-<span class="c"># because in Eqn(24) of Torrence and Compo [1998], division by scale has been done.</span>
+<span class="c1">########################</span>
+<span class="c1">#  Scale-average between El Nino periods of 2--8 years</span>
+<span class="c1">########################</span>
+<span class="c1"># No need to change </span>
+<span class="c1"># because in Eqn(24) of Torrence and Compo [1998], division by scale has been done.</span>
 <span class="n">scale_avgs</span><span class="o">=</span><span class="n">scale_avg</span>
 <span class="n">scaleavg_signifs</span><span class="o">=</span><span class="n">scaleavg_signif</span>
 </pre></div>
@@ -9697,10 +9698,10 @@ rP8HCD9OZ5Jd/PwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">#figure size</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1">#figure size</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="c"># subplot positions</span>
+<span class="c1"># subplot positions</span>
 <span class="n">width</span><span class="o">=</span> <span class="mf">0.65</span>
 <span class="n">hight</span> <span class="o">=</span> <span class="mf">0.28</span><span class="p">;</span>
 <span class="n">pos1a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
@@ -9708,69 +9709,69 @@ rP8HCD9OZ5Jd/PwAAAAASUVORK5CYII=
 <span class="n">pos1c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.79</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="n">hight</span><span class="p">]</span>
 <span class="n">pos1d</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span>  <span class="mf">0.07</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
 
-<span class="c">#########################################</span>
-<span class="c">#---- a) Original signal</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#---- a) Original signal</span>
+<span class="c1">#########################################</span>
 <span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1a</span><span class="p">)</span>
-<span class="c">#original</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">data</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="c">#reconstruction</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">iwave</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s">&quot;k--&quot;</span><span class="p">)</span>
+<span class="c1">#original</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">data</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="c1">#reconstruction</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">iwave</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variance</span><span class="p">)</span><span class="o">+</span><span class="n">mean</span><span class="p">,</span><span class="s2">&quot;k--&quot;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;NINO3 SST (degC)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;a) NINO3 Sea Surface Temperature (seasonal)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;NINO3 SST (degC)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;a) NINO3 Sea Surface Temperature (seasonal)&#39;</span><span class="p">)</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   b) Wavelet spectrum</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   b) Wavelet spectrum</span>
+<span class="c1">#########################################</span>
 
-<span class="c">#--- Contour plot wavelet power spectrum</span>
+<span class="c1">#--- Contour plot wavelet power spectrum</span>
 <span class="n">bx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1b</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0625</span><span class="p">,</span><span class="mf">0.125</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span> 
 <span class="n">Yticks</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">period</span><span class="p">))),</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">period</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">powers</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">))</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">powers</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span> <span class="n">extend</span><span class="o">=</span><span class="s">&#39;both&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;rainbow&#39;</span><span class="p">))</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Time (year)&#39;</span><span class="p">)</span>
-<span class="n">bx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Period (years)&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="kn">as</span> <span class="nn">ticker</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">powers</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">levels</span><span class="p">),</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;rainbow&#39;</span><span class="p">))</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (year)&#39;</span><span class="p">)</span>
+<span class="n">bx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Period (years)&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
 <span class="n">ymajorLocator</span><span class="o">=</span><span class="n">ticker</span><span class="o">.</span><span class="n">FixedLocator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">Yticks</span><span class="p">))</span>
 <span class="n">bx</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span> <span class="n">ymajorLocator</span> <span class="p">)</span>
 <span class="n">ticks</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">(</span><span class="n">Yticks</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;b) Wavelet Power Spectrum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;b) Wavelet Power Spectrum&#39;</span><span class="p">)</span>
 
-<span class="c"># 95% significance contour, levels at -99 (fake) and 1 (95% signif)</span>
-<span class="n">cs</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">sig95</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 95% significance contour, levels at -99 (fake) and 1 (95% signif)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="n">sig95</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c"># cone-of-influence, anything &quot;below&quot; is dubious</span>
+<span class="c1"># cone-of-influence, anything &quot;below&quot; is dubious</span>
 <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="p">;</span>
 <span class="n">coi_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)],</span> <span class="n">coi</span><span class="p">,</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)],[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">scale</span><span class="p">)]])</span>
 <span class="n">ts_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">ts</span><span class="p">,</span> <span class="p">[</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]]);</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">F</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">bx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">F</span><span class="o">=</span><span class="n">bx</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">ts_area</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">coi_area</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">hatch</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   c) Global Wavelet spectrum</span>
-<span class="c">#########################################</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   c) Global Wavelet spectrum</span>
+<span class="c1">#########################################</span>
 
-<span class="c">#--- Plot global wavelet spectrum</span>
+<span class="c1">#--- Plot global wavelet spectrum</span>
 <span class="n">cx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1c</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="n">bx</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_wss</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_signifs</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_wss</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">global_signifs</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 <span class="n">ylim</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">([</span><span class="n">period</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">period</span><span class="o">.</span><span class="n">max</span><span class="p">()]))</span>
 <span class="n">cx</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;c) Global Wavelet Spectrum&#39;</span><span class="p">)</span>
 <span class="n">xrangec</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.25</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">global_wss</span><span class="p">)])</span>
 
-<span class="c">#########################################</span>
-<span class="c">#   d) Global Wavelet spectrum</span>
-<span class="c">#########################################</span>
-<span class="c">#--- Plot Scale-averaged spectrum -----------------</span>
+<span class="c1">#########################################</span>
+<span class="c1">#   d) Global Wavelet spectrum</span>
+<span class="c1">#########################################</span>
+<span class="c1">#--- Plot Scale-averaged spectrum -----------------</span>
 <span class="n">dx</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">pos1d</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="n">bx</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">scale_avgs</span><span class="p">,</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[</span><span class="n">scaleavg_signifs</span><span class="p">,</span><span class="n">scaleavg_signifs</span><span class="p">],</span><span class="s">&quot;k--&quot;</span><span class="p">)</span>
-<span class="nb">xrange</span><span class="o">=</span><span class="n">dx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
-<span class="n">dx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Avg variance (degC$^2$)&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;d) Scale-average Time Series&#39;</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">scale_avgs</span><span class="p">,</span><span class="s2">&quot;r-&quot;</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],[</span><span class="n">scaleavg_signifs</span><span class="p">,</span><span class="n">scaleavg_signifs</span><span class="p">],</span><span class="s2">&quot;k--&quot;</span><span class="p">)</span>
+<span class="n">xrange</span><span class="o">=</span><span class="n">dx</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="n">dx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Avg variance (degC$^2$)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;d) Scale-average Time Series&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
