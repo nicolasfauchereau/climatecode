@@ -11751,7 +11751,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="salem-demo"><a href="https://github.com/fmaussion/salem">salem</a> demo<a class="anchor-link" href="#salem-demo">&#182;</a></h2>
+<h1 id="a-quick-look-at-the-salem-library">a quick look at the <a href="https://github.com/fmaussion/salem">salem</a> library<a class="anchor-link" href="#a-quick-look-at-the-salem-library">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11760,7 +11760,38 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>source activate IOOS3; jupyter notebook</code></p>
+<p><a href="https://github.com/fmaussion/salem">Salem</a> is a python library developed by <a href="http://fabienmaussion.info/">Fabien Maussion</a>, a researcher and lecturer at the Institute of Atmospheric and Cryospheric Sciences, at the University of Innsbruck.</p>
+<p><br></p>
+<p>It extends <a href="http://xarray.pydata.org/en/stable/">xarray</a> and adds notably geolocalised subsetting (via shapefiles), masking, and geographical mapping operations to xarray’s <a href="http://xarray.pydata.org/en/stable/data-structures.html#dataarray">DataArray</a> <a href="http://xarray.pydata.org/en/stable/data-structures.html#">DataSet</a> datasetdata structures.</p>
+<p><br></p>
+<p>It is still ayoung project, but has already proven extremely useful to me in a number of occasions, and I think it's the perfect illustration of how one can build clever and useful extensions build on the very powerful <a href="http://xarray.pydata.org/en/stable/">xarray</a> data structures. I hope to be able to contribute to this project, and this post is intended to be a shoutout and acknowledgment of <a href="http://fabienmaussion.info/">Fabien Maussion</a>'s work.</p>
+<p><br></p>
+<p>If you work in climate / ocean science and are already using (as you should !) xarray, <a href="https://github.com/fmaussion/salem">Salem</a> is definitely worth a try</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="installation">installation<a class="anchor-link" href="#installation">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://github.com/fmaussion/salem">Salem</a> has a number of hard dependencies: what worked for me (<em>MacOS Sierra</em>) is to create a specific environment following
+    the instructions available <a href="https://github.com/ioos/notebooks_demos/wiki/Installing-Conda-Python-with-the-IOOS-environment">here</a>, then installing <strong>Salem</strong> in this 
+    environment using pip and development version of Salem, via:</p>
+
+<pre><code>    ```
+    pip install git+https://github.com/fmaussion/salem.git
+    ```</code></pre>
 
 </div>
 </div>
