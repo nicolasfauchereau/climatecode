@@ -7,210 +7,214 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/2015/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/2015/07/</loc>
-  <lastmod>2015-07-30T22:53:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/archive.html</loc>
+<<<<<<< HEAD
   <lastmod>2016-10-01T22:32:00Z</lastmod>
+=======
+  <lastmod>2016-02-17T19:35:00Z</lastmod>
+>>>>>>> f0e9a20b4b60b615aec908766e8d9d153343641f
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/about/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/books/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/cat_resources/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/enso/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/eof/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/gauge/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooks/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython-notebooksi/</loc>
-  <lastmod>2015-08-03T02:03:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/ipython/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/jupyter/</loc>
-  <lastmod>2015-08-18T01:43:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/libraries/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/matplotlib/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/meter/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/netcdf/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/nikola/</loc>
-  <lastmod>2015-08-18T01:43:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/nino/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/notebook/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/olr/</loc>
-  <lastmod>2015-08-06T08:20:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-science/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/open-source/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/resources/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/sst/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tag1/</loc>
-  <lastmod>2015-08-04T21:03:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tag2/</loc>
-  <lastmod>2015-08-04T21:03:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tracker/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/troubleshooting/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/tutorials/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/wavelets/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/categories/xray/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/galleries/</loc>
-  <lastmod>2015-09-19T06:15:00Z</lastmod>
+  <lastmod>2016-01-13T21:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/listings/</loc>
-  <lastmod>2015-09-19T06:15:00Z</lastmod>
+  <lastmod>2016-01-13T21:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/about-this-blog/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/blogging-with-nikola-and-the-jupyter-notebooks/</loc>
-  <lastmod>2015-08-18T01:43:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/building-an-el-nino-tracker-with-matplotlib/</loc>
-  <lastmod>2015-09-19T04:43:00Z</lastmod>
+  <lastmod>2015-09-16T08:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/building-an-enso-tracker-with-matplotlib/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/</loc>
-  <lastmod>2015-09-19T04:43:00Z</lastmod>
+  <lastmod>2015-09-16T07:27:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/eof-analysis-with-scikit-learn/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/example/</loc>
-  <lastmod>2015-08-05T01:42:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/example/index.src.html</loc>
-  <lastmod>2015-08-05T01:41:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/miniconda-installation/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/resources/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/troubleshooting-the-ipython-jupyter-notebook/</loc>
-  <lastmod>2015-09-19T06:15:00Z</lastmod>
+  <lastmod>2015-09-20T20:54:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/troubleshooting/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/wavelet-analysis-in-python/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/xray/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/posts/xray/index.src.html</loc>
-  <lastmod>2015-08-06T03:05:00Z</lastmod>
+  <lastmod>2015-08-19T07:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://nicolasfauchereau.github.io/climatecode/stories/about-me/</loc>
-  <lastmod>2016-01-13T21:45:00Z</lastmod>
+  <lastmod>2016-01-13T22:01:00Z</lastmod>
  </url>
 </urlset>

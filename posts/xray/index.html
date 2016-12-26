@@ -264,13 +264,13 @@ defining a little function to plot a map with <a href="http://matplotlib.org/bas
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">'jet'</span><span class="p">),</span> \
-               <span class="n">ax</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'jet'</span><span class="p">),</span> \
+               <span class="n">ax</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ax</span><span class="p">:</span> 
         <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">*</span> <span class="mi">8</span><span class="p">))</span>
     <span class="n">m</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span>
     <span class="n">im</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">+</span><span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">),</span> \
-                    <span class="n">latlon</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+                    <span class="n">latlon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
     <span class="n">m</span><span class="o">.</span><span class="n">drawcoastlines</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">grid</span><span class="p">:</span> 
         <span class="n">m</span><span class="o">.</span><span class="n">drawmeridians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -314,7 +314,7 @@ I am gonna use the <a href="ftp://ftp.cdc.noaa.gov/Datasets/interp_OLR/olr.mon.m
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'HOME'</span><span class="p">],</span> <span class="s">'data/olr.mon.mean.nc'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset</span> <span class="o">=</span> <span class="n">xray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'HOME'</span><span class="p">],</span> <span class="s1">'data/olr.mon.mean.nc'</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -405,7 +405,7 @@ To access data and coordinates vectors of a <code>xray.Dataset</code>, you use a
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">lat</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s">'lat'</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">lat</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -520,7 +520,7 @@ It means notably - something very handy for climate / ocean datasets - that you 
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="p">(</span><span class="s">'1998-1-1'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="p">(</span><span class="s1">'1998-1-1'</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -577,7 +577,7 @@ You can also use <strong>slices</strong>, and combine selection over several dim
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="o">-</span><span class="mi">40</span><span class="p">),</span> <span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s">'1998-1-1'</span><span class="p">,</span><span class="s">'2000-12-1'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="o">-</span><span class="mi">40</span><span class="p">),</span> <span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'1998-1-1'</span><span class="p">,</span><span class="s1">'2000-12-1'</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -693,8 +693,8 @@ Attributes:
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">lat</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s">'lat'</span><span class="p">]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s">'lon'</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">lat</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">'lat'</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">dset</span><span class="p">[</span><span class="s1">'lon'</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -743,9 +743,9 @@ Plotting the mean Outgoing Longwave Radiation field for January 1998, <em>i.e.</
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">bm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s">'cyl'</span><span class="p">,</span><span class="n">llcrnrlat</span><span class="o">=</span><span class="n">lat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">urcrnrlat</span><span class="o">=</span><span class="n">lat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>\
+<div class=" highlight hl-ipython3"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">bm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">'cyl'</span><span class="p">,</span><span class="n">llcrnrlat</span><span class="o">=</span><span class="n">lat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">urcrnrlat</span><span class="o">=</span><span class="n">lat</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>\
             <span class="n">llcrnrlon</span><span class="o">=</span><span class="n">lon</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">urcrnrlon</span><span class="o">=</span><span class="n">lon</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>\
-            <span class="n">lat_ts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">resolution</span><span class="o">=</span><span class="s">'c'</span><span class="p">)</span>
+            <span class="n">lat_ts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">resolution</span><span class="o">=</span><span class="s1">'c'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -758,7 +758,7 @@ Plotting the mean Outgoing Longwave Radiation field for January 1998, <em>i.e.</
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="p">(</span><span class="s">'1998-1-1'</span><span class="p">))[</span><span class="s">'olr'</span><span class="p">],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">dset</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="p">(</span><span class="s1">'1998-1-1'</span><span class="p">))[</span><span class="s1">'olr'</span><span class="p">],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -811,7 +811,7 @@ trivial to calculate a climatology</p>
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">clim</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.month'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">clim</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.month'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -890,7 +890,7 @@ Lets' plot the monthly climatology above, using the <code>calendar</code> module
 <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)):</span> 
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">clim</span><span class="p">[</span><span class="s">'olr'</span><span class="p">][</span><span class="n">i</span><span class="p">,:,:],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">month_name</span><span class="p">[</span><span class="n">month</span><span class="p">])</span>
+    <span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">clim</span><span class="p">[</span><span class="s1">'olr'</span><span class="p">][</span><span class="n">i</span><span class="p">,:,:],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">month_name</span><span class="p">[</span><span class="n">month</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -931,7 +931,7 @@ xray supports the “derived” datetime components implemented by pandas, inclu
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">seas_clim</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.season'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">seas_clim</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.season'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -946,10 +946,10 @@ xray supports the “derived” datetime components implemented by pandas, inclu
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">f</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s">'F'</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">seas</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seas_clim</span><span class="p">[</span><span class="s">'season'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">):</span> 
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s1">'F'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">seas</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seas_clim</span><span class="p">[</span><span class="s1">'season'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">):</span> 
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">seas_clim</span><span class="p">[</span><span class="s">'olr'</span><span class="p">][</span><span class="n">i</span><span class="p">,:,:],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">seas</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+    <span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">seas_clim</span><span class="p">[</span><span class="s1">'olr'</span><span class="p">][</span><span class="n">i</span><span class="p">,:,:],</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">seas</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -994,7 +994,7 @@ For example, you can easily calculate the <strong>anomalies with respect to a gi
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">demean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
-    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s">'1981-1-1'</span><span class="p">,</span><span class="s">'2010-12-1'</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">'1981-1-1'</span><span class="p">,</span><span class="s1">'2010-12-1'</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1007,7 +1007,7 @@ For example, you can easily calculate the <strong>anomalies with respect to a gi
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">olr_anoms</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.month'</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">demean</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">olr_anoms</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'time.month'</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">demean</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1077,8 +1077,8 @@ Let's plot the anomalies for January 1998 (El Niño again)</p>
 <div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">olr_anoms</span><span class="p">[</span><span class="s">'olr'</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s">'1998-1-1'</span><span class="p">),</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> \
-           <span class="n">grid</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">'RdBu_r'</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">plot_field</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">olr_anoms</span><span class="p">[</span><span class="s1">'olr'</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">'1998-1-1'</span><span class="p">),</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> \
+           <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'RdBu_r'</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1133,7 +1133,7 @@ Note: it works only with a <code>xray.Dataset</code> object, if you have a <code
 <div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">olr</span> <span class="o">=</span> <span class="n">olr_anoms</span><span class="p">[</span><span class="s">'olr'</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">olr</span> <span class="o">=</span> <span class="n">olr_anoms</span><span class="p">[</span><span class="s1">'olr'</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -1219,7 +1219,7 @@ Note: it works only with a <code>xray.Dataset</code> object, if you have a <code
 <div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">olr</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s">'./olr_anomalies.nc'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">olr</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">'./olr_anomalies.nc'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1258,13 +1258,13 @@ standard climate dataset</p>
 <div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">357.5</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">357.5</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">lons</span><span class="p">,</span> <span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">)</span>
 
 <span class="n">lev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1000</span><span class="p">,</span><span class="mi">925</span><span class="p">,</span><span class="mi">850</span><span class="p">])</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s">'2015-1-1'</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s">'2015-1-3'</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">'2015-1-1'</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">'2015-1-3'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1317,11 +1317,11 @@ To create a <code>xray.Dataset</code>, you first create a Python dictionnary:</p
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">d</span><span class="p">[</span><span class="s">'time'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">'time'</span><span class="p">,</span><span class="n">time</span><span class="p">)</span>
-<span class="n">d</span><span class="p">[</span><span class="s">'latitudes'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">'latitudes'</span><span class="p">,</span><span class="n">lat</span><span class="p">)</span>
-<span class="n">d</span><span class="p">[</span><span class="s">'longitudes'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">'longitudes'</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span>
-<span class="n">d</span><span class="p">[</span><span class="s">'level'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s">'level'</span><span class="p">,</span> <span class="n">lev</span><span class="p">)</span>
-<span class="n">d</span><span class="p">[</span><span class="s">'var'</span><span class="p">]</span> <span class="o">=</span> <span class="p">([</span><span class="s">'time'</span><span class="p">,</span><span class="s">'level'</span><span class="p">,</span><span class="s">'latitudes'</span><span class="p">,</span><span class="s">'longitudes'</span><span class="p">],</span> <span class="n">arr</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'time'</span><span class="p">,</span><span class="n">time</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'latitudes'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'latitudes'</span><span class="p">,</span><span class="n">lat</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'longitudes'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'longitudes'</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'level'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'level'</span><span class="p">,</span> <span class="n">lev</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'var'</span><span class="p">]</span> <span class="o">=</span> <span class="p">([</span><span class="s1">'time'</span><span class="p">,</span><span class="s1">'level'</span><span class="p">,</span><span class="s1">'latitudes'</span><span class="p">,</span><span class="s1">'longitudes'</span><span class="p">],</span> <span class="n">arr</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1369,7 +1369,7 @@ You can easily add global and variables attributes</p>
 <div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">'creation_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y-%m-%d"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'creation_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1382,8 +1382,8 @@ You can easily add global and variables attributes</p>
 <div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">longitudes</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">'units'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'degrees_east'</span>
-<span class="n">dset_from_dict</span><span class="o">.</span><span class="n">latitudes</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s">'units'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'degrees_north'</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">longitudes</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'units'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'degrees_east'</span>
+<span class="n">dset_from_dict</span><span class="o">.</span><span class="n">latitudes</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'units'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'degrees_north'</span>
 </pre></div>
 
 </div>
@@ -1407,7 +1407,7 @@ Then you can save to disk as seen above</p>
 <div class="prompt input_prompt">In [39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s">'./dset_from_dict.nc'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset_from_dict</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">'./dset_from_dict.nc'</span><span class="p">)</span>
 </pre></div>
 
 </div>

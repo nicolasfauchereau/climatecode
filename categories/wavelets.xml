@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>cracking the climate code (wavelets)</title><link>http://nicolasfauchereau.github.io/climatecode/</link><description></description><atom:link rel="self" href="http://nicolasfauchereau.github.io/climatecode/categories/wavelets.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 13 Jan 2016 21:53:14 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Wavelet analysis in Python</title><link>http://nicolasfauchereau.github.io/climatecode/posts/wavelet-analysis-in-python/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>cracking the climate code (wavelets)</title><link>http://nicolasfauchereau.github.io/climatecode/</link><description></description><atom:link href="http://nicolasfauchereau.github.io/climatecode/categories/wavelets.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 17 Feb 2016 19:37:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Wavelet analysis in Python</title><link>http://nicolasfauchereau.github.io/climatecode/posts/wavelet-analysis-in-python/</link><dc:creator>Nicolas Fauchereau</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -30,11 +30,10 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;we will try and reproduce the examples found in&lt;/p&gt;
+&lt;p&gt;we will try and reproduce the examples found in:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0477%281998%29079%3C0061%3AAPGTWA%3E2.0.CO%3B2"&gt;A practical guide to wavelet analysis&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;from Christopher Torrence and Gil P. Compo&lt;/p&gt;
-&lt;p&gt;which use the &lt;strong&gt;NINO3.4&lt;/strong&gt; seasonal time series&lt;/p&gt;
-&lt;p&gt;The NINO3.4 index is calculated as the regional average of Sea - Surface - Temperature (SST) anomalies in the central eastern Pacific [] and is one of the most used indices for tracking the the El Niño - Southern Oscillation phenomenon.&lt;/p&gt;
+&lt;p&gt;which use the &lt;strong&gt;NINO3.4&lt;/strong&gt; seasonal time series (The &lt;strong&gt;NINO3.4&lt;/strong&gt; index is calculated as the regional average of Sea - Surface - Temperature (SST) anomalies in the central eastern Pacific [5°N to 5°S, 170°W to 120°W.] and is one of the most used indices for tracking the the El Niño - Southern Oscillation phenomenon)&lt;/p&gt;
 &lt;p&gt;See also the &lt;a href="http://ion.exelisvis.com/"&gt;Interactive Wavelet page&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We will also see the example of rectification of the bias that exist in favor of large scales&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://nicolasfauchereau.github.io/climatecode/posts/wavelet-analysis-in-python/"&gt;Read more…&lt;/a&gt; (8 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>NINO</category><category>wavelets</category><guid>http://nicolasfauchereau.github.io/climatecode/posts/wavelet-analysis-in-python/</guid><pubDate>Wed, 30 Sep 2015 04:16:21 GMT</pubDate></item></channel></rss>
