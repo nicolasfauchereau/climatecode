@@ -5,17 +5,16 @@ article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="(Python) code and musings about open source for climate science">
 <meta name="viewport" content="width=device-width">
-<title>cracking the climate code | cracking the climate code</title>
-<link href="assets/css/bitter.css" rel="stylesheet" type="text/css">
-<link href="assets/css/main.css" rel="stylesheet" type="text/css">
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="http://nicolasfauchereau.github.io/climatecode/">
+<title>Salem | cracking the climate code</title>
+<link href="../../assets/css/bitter.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://nicolasfauchereau.github.io/climatecode/posts/salem/">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -28,38 +27,85 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><style>
-    div.input_prompt {
-      display: none;
-    }
-    </style>
+</script><!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Nicolas Fauchereau">
+<meta property="og:site_name" content="cracking the climate code">
+<meta property="og:title" content="Salem">
+<meta property="og:url" content="http://nicolasfauchereau.github.io/climatecode/posts/salem/">
+<meta property="og:description" content="salem demo¶
+
+
+
+
+
+
+
+
+source activate IOOS3; jupyter notebook
+
+
+
+
+
+
+In [6]:
+
+    
+%matplotlib inline
+
+
+
+
+
+
+
+
+
+In [8]:
+
+    
+from matplotlib import pyplot as plt
+
+
+
+
+
+
+
+
+
+In [9]:
+
+    
+import numpy as np">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-12-26T22:31:44+13:00">
 </head>
 <body>
     <section class="social"><ul>
-<li><a href="#" title="Home"><i class="icon-home"></i></a></li>
-            <li><a href="archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="stories/about-me" title="About me"><i class="icon-user"></i></a></li>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../stories/about-me" title="About me"><i class="icon-user"></i></a></li>
             <li><a href="https://twitter.com/nfauchereau" title="Twitter"><i class="icon-twitter"></i></a></li>
             <li><a href="https://github.com/nicolasfauchereau" title="Github"><i class="icon-github"></i></a></li>
             <li><a href="https://nz.linkedin.com/pub/nicolas-fauchereau/7/6b2/469" title="Linkedin"><i class="icon-linkedin"></i></a></li>
 
         </ul></section><section class="page-content"><div class="content" rel="main">
-        <div class="post">
-            <h1 class="title"><a href="posts/salem/">Salem</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2016-12-26T22:31:44+13:00">2016-12-26 22:31</time>
-</div>
-                <div class="stats">
-                                <a href="posts/salem/#disqus_thread" data-disqus-identifier="cache/posts/salem.html">Comments</a>
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Salem</h1>
 
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2016-12-26T22:31:44+13:00">2016-12-26 22:31</time>
+            
+                      |  
+        <a href="index.ipynb" id="sourcelink">Source</a>
 
-                </div>
-                
             </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
+            
+        </div>
+        <div class="body">
+            <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -68,7 +114,7 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="salem-demo">
-<a href="https://github.com/fmaussion/salem">salem</a> demo<a class="anchor-link" href="posts/salem/#salem-demo">¶</a>
+<a href="https://github.com/fmaussion/salem">salem</a> demo<a class="anchor-link" href=".#salem-demo">¶</a>
 </h3>
 </div>
 </div>
@@ -222,321 +268,33 @@ MathJax.Hub.Config({
     </div>
   </div>
 
-            </div>
         </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/wavelet-analysis-in-python/">Wavelet analysis in Python</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-09-30T17:16:21+13:00">2015-09-30 17:16</time>
-</div>
-                <div class="stats">
-                                <a href="posts/wavelet-analysis-in-python/#disqus_thread" data-disqus-identifier="cache/posts/wavelet-analysis-in-python.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/nino/" rel="tag">NINO</a></li>
-           <li><a class="tag p-category" href="categories/wavelets/" rel="tag">wavelets</a></li>
+                <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../wavelet-analysis-in-python/" rel="prev" title="Wavelet analysis in Python">Previous post</a>
+            </li>
         </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This notebook contains a brief overview of 3 convenient packages implementing <a href="https://en.wikipedia.org/wiki/Wavelet">wavelet analysis</a> in Python:</p>
-<p><br></p>
-<ul>
-<li>waipy 
-<br>
-</li>
-</ul>
-<ul>
-<li>kPywavelets
-<br>
-</li>
-</ul>
-<ul>
-<li>wavelets
-<br>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>we will try and reproduce the examples found in:</p>
-<p><a href="http://journals.ametsoc.org/doi/pdf/10.1175/1520-0477%281998%29079%3C0061%3AAPGTWA%3E2.0.CO%3B2">A practical guide to wavelet analysis</a></p>
-<p>from Christopher Torrence and Gil P. Compo</p>
-<p>which use the <strong>NINO3.4</strong> seasonal time series (The <strong>NINO3.4</strong> index is calculated as the regional average of Sea - Surface - Temperature (SST) anomalies in the central eastern Pacific [5°N to 5°S, 170°W to 120°W.] and is one of the most used indices for tracking the the El Niño - Southern Oscillation phenomenon)</p>
-<p>See also the <a href="http://ion.exelisvis.com/">Interactive Wavelet page</a></p>
-<p>We will also see the example of rectification of the bias that exist in favor of large scales</p>
-<p class="more"><a href="posts/wavelet-analysis-in-python/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/troubleshooting/">troubleshooting</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-09-19T16:47:51+12:00">2015-09-19 16:47</time>
-</div>
-                <div class="stats">
-                                <a href="posts/troubleshooting/#disqus_thread" data-disqus-identifier="cache/posts/troubleshooting-the-ipython-jupyter-notebook.html">Comments</a>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="climatecode",
+            disqus_url="http://nicolasfauchereau.github.io/climatecode/posts/salem/",
+        disqus_title="Salem",
+        disqus_identifier="cache/posts/salem.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/ipython/" rel="tag">ipython</a></li>
-           <li><a class="tag p-category" href="categories/notebook/" rel="tag">notebook</a></li>
-           <li><a class="tag p-category" href="categories/troubleshooting/" rel="tag">troubleshooting</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div>
-<p>In this post I am giving some pointers to troubleshoot issues when installing packages via <a href="http://conda.pydata.org/docs/intro.html">conda</a> or <a href="https://pip.pypa.io/en/stable/">pip</a>, as well
-as some pointers to solve issues running the <a href="https://jupyter.org">ipython (now jupyter)</a> notebook on a machine behind a proxy.</p>
-<p><br></p>
-<p class="more"><a href="posts/troubleshooting/">Read more…</a></p>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/building-an-enso-tracker-with-matplotlib/">building an ENSO tracker with Matplotlib</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-09-16T20:06:04+12:00">2015-09-16 20:06</time>
-</div>
-                <div class="stats">
-                                <a href="posts/building-an-enso-tracker-with-matplotlib/#disqus_thread" data-disqus-identifier="cache/posts/building-an-enso-tracker-with-matplotlib.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/enso/" rel="tag">ENSO</a></li>
-           <li><a class="tag p-category" href="categories/gauge/" rel="tag">gauge</a></li>
-           <li><a class="tag p-category" href="categories/matplotlib/" rel="tag">matplotlib</a></li>
-           <li><a class="tag p-category" href="categories/meter/" rel="tag">meter</a></li>
-           <li><a class="tag p-category" href="categories/tracker/" rel="tag">tracker</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post, I will show how to play with <a href="http://www.matplotlib.org">matplotlib</a>'s patches to create a <em>gauge</em> or <em>meter</em>, the goal will be to get something like the <a href="http://www.bom.gov.au/climate/enso/">Australian Bureau of Meteorology's ENSO tracker</a> below</p>
-<p><br></p>
-<p><img src="http://www.bom.gov.au/climate/enso/tracker/images/dial-5.png" alt=""></p>
-<p class="more"><a href="posts/building-an-enso-tracker-with-matplotlib/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/miniconda-installation/">Miniconda installation</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-08-13T16:40:15+12:00">2015-08-13 16:40</time>
-</div>
-                <div class="stats">
-                                <a href="posts/miniconda-installation/#disqus_thread" data-disqus-identifier="cache/posts/miniconda-installation.html">Comments</a>
-
-
-                </div>
-                
-            </div>
-            <div class="body">
-                <div>
-<p>Below is a <code>bash</code> script to install <a href="http://conda.pydata.org/miniconda.html">Miniconda</a> and set up a root environment containing all the libraries that I routinely use and that are necessary to
-replicate the examples given in this blog.
-</p>
-<p class="more"><a href="posts/miniconda-installation/">Read more…</a></p>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/eof-analysis-with-scikit-learn/">EOF analysis with scikit-learn</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-08-10T11:21:34+12:00">2015-08-10 11:21</time>
-</div>
-                <div class="stats">
-                                <a href="posts/eof-analysis-with-scikit-learn/#disqus_thread" data-disqus-identifier="cache/posts/eof-analysis-with-scikit-learn.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/eof/" rel="tag">EOF</a></li>
-           <li><a class="tag p-category" href="categories/sst/" rel="tag">SST</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook I give a very simple (and rather uncommented) example of how to use <a href="posts/eof-analysis-with-scikit-learn/">scikit-learn</a> to perform an Empirical Orthogonal Function decomposition (<em>EOF analysis</em>, often referred to as well as <em>Principal Component Analysis</em> or <em>PCA</em>) of a climate field, in this case the monthly Sea Surface Temperature (SST) anomalies in the Pacific. 
-</p>
-<p class="more"><a href="posts/eof-analysis-with-scikit-learn/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/xray/">xray</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-08-08T16:43:24+12:00">2015-08-08 16:43</time>
-</div>
-                <div class="stats">
-                                <a href="posts/xray/#disqus_thread" data-disqus-identifier="cache/posts/xray.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/netcdf/" rel="tag">netcdf</a></li>
-           <li><a class="tag p-category" href="categories/xray/" rel="tag">xray</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://github.com/xray/xray">xray</a> has been originally developed by scientists and engineers working at the <a href="http://climate.com/">Climate Corporation</a></p>
-<p><br><strong>xray</strong> is a Python package that allows to define and manipulate <strong>N-Dimensional labelled arrays</strong>. In a nutschell, whenever you've got data that is defined over more than 2 dimensions, and to each point along those <strong>dimensions</strong> can be associated a <strong>label</strong> (e.g. a <em>latitute</em>, a <em>longitude</em>, a <em>timestamp</em>, a <em>depth</em>, <em>etc</em>) then you definitely need to have a look at xray.</p>
-<p><br>
-If this data model reminds you of the data structures introduced by the widely used <a href="http://pandas.pydata.org">pandas</a> library, this is not a coincidence, coming right from the <a href="http://xray.readthedocs.org/en/stable/">xray documentation</a> is this disclaimer: <em>"xray is an open source project and Python package that aims to bring the labeled data power of pandas to the physical sciences, by providing N-dimensional variants of the core pandas data structures."</em></p>
-<p><br>
-In this post I will give a few reasons why I think that <strong>xray</strong> is destined to become a core Python package for people working with multi-dimensional arrays, especially - but not only - in the geosciences, before illustrating the power of xray with a few examples of how it simplifies considerably common operations on climate datasets. </p>
-<p class="more"><a href="posts/xray/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/resources/">resources</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-08-03T14:02:05+12:00">2015-08-03 14:02</time>
-</div>
-                <div class="stats">
-                                <a href="posts/resources/#disqus_thread" data-disqus-identifier="cache/posts/resources.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/books/" rel="tag">books</a></li>
-           <li><a class="tag p-category" href="categories/ipython-notebooks/" rel="tag">ipython notebooks</a></li>
-           <li><a class="tag p-category" href="categories/libraries/" rel="tag">libraries</a></li>
-           <li><a class="tag p-category" href="categories/resources/" rel="tag">resources</a></li>
-           <li><a class="tag p-category" href="categories/tutorials/" rel="tag">tutorials</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div>
-<p>A  - totally incomplete - list of resources I have come across on Python and Python for data analysis and visualization, loosely organized by category:</p>
-<p><br></p>
-<p class="more"><a href="posts/resources/">Read more…</a></p>
-</div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="posts/about-this-blog/">About this blog</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2015-08-03T13:25:27+12:00">2015-08-03 13:25</time>
-</div>
-                <div class="stats">
-                                <a href="posts/about-this-blog/#disqus_thread" data-disqus-identifier="cache/posts/about-this-blog.html">Comments</a>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="categories/about/" rel="tag">about</a></li>
-           <li><a class="tag p-category" href="categories/open-science/" rel="tag">open science</a></li>
-           <li><a class="tag p-category" href="categories/open-source/" rel="tag">open source</a></li>
-        </ul>
-</div>
-
-            </div>
-            <div class="body">
-                <div>
-<p>I am a climate scientist (to know more about me, head <a href="http://nicolasfauchereau.github.io/climatecode/stories/about-me/">here</a>) and have been using
-<a href="http://www.python.org">Python</a> for data analysis
-and visualisation for about 10 years, slowly transitioning from Matlab and R.</p>
-<p><br></p>
-<p>In this blog, I will try and share what I have learned along the way, and give
-full examples of how I use Python in my research or operational workflows.  </p>
-<p><br></p>
-<p>I will occasionally reflect on <a href="http://openscience.com">open science</a>, and how open-source in general,
-and Python in particular can be used to help make climate science more open.  </p>
-</div>
-            </div>
-        </div>
-    
-                   <script>var disqus_shortname="climatecode";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p></p>
+    </div>
+                    <footer id="footer"><p></p>
 <hr>Contents © 2016 <a href="mailto:nicolas.fauchereau@gmail.com">Nicolas Fauchereau</a> 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:0px;" src="https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a>
@@ -553,7 +311,7 @@ and Python in particular can be used to help make climate science more open.  </
   ga('create', 'UA-66126333-1', 'auto');
   ga('send', 'pageview');
 
-</script><script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="assets/js/jquery.timeago.js" type="text/javascript"></script><script src="assets/js/mathjax.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+</script><script src="../../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="../../assets/js/jquery.timeago.js" type="text/javascript"></script><script src="../../assets/js/mathjax.js" type="text/javascript"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 <a class="addthis_button_more"><i class="icon-share-sign icon-2x"></i>    Share</a>
 <ul>
 <li>
